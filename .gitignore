@@ -1,0 +1,9 @@
+target/
+src/main/java/com/bodejidi/*.swp
+
+src/main/webapp/*.swp
+
+src/main/webapp/WEB-INF/*.swp
+
+src/test/java/com/bodejidi/*.swp
+
