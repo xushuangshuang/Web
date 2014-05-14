@@ -10,4 +10,4 @@ mkdir lib/
 
 mkdir sql/
 
-mkdir -p src/test/java/com/com/bodejidi/
+mkdir -p src/test/java/com/bodejidi/
