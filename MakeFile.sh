@@ -10,4 +10,8 @@ mkdir lib/
 
 mkdir sql/
 
+mkdir -p src/main/webapp/servlet/
+
+mkdir -p src/main/webapp/jsp/
+
 mkdir -p src/test/java/com/bodejidi/
