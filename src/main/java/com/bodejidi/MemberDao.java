@@ -2,15 +2,24 @@ package com.bodejidi;
 
 public class MemberDao
 {
-	public void save(Member member)
+	public void userSave(Member member)
 	{
-		String sql = "INSERT INTO tb_username (username, userEmail, ordered, ordering, orderedlist, orderingDate) ";
+		String sql = "INSERT INTO tb_username (username, userEmail) VALUE(?, ?) ";
 		DatabaseService bs = DatabaseService.newInstance();
 		try
 		{
 			bs.prepare(sql)
-				.setString()
+				.setString(member.getUsername())
+				.setString(member.getEmail())
+				.execute();
 		}
+		catch(Exception e)
+		{
+			System.out.println("SQL: " + sql);
+		}
+
+	
+
 	}
 
 }
