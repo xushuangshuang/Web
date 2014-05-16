@@ -20,6 +20,8 @@ public class Constants extends HttpServlet
 		member.setPhone(phone);
 		String Email = req.getParameter("Email");
 		member.setEmail(Email);
+		String address = req.getParameter("address");
+		member.setAddress(address);
 		return member;
 	}
 }
