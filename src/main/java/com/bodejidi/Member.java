@@ -7,7 +7,7 @@ public class Member
 	private String username;
 	private String password;
 	private String Email;
-	private String phone;
+	private Long phone;
 	private String address;
 
 	public void setFirstName(String firstName)
@@ -42,11 +42,11 @@ public class Member
 	{
 		return password;
 	}
-	public void setPhone(String phone)
+	public void setPhone(Long phone)
 	{
 		this.phone = phone;
 	}
-	public String getPhone()
+	public Long getPhone()
 	{
 		return phone;
 	}
