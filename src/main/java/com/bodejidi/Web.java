@@ -16,7 +16,7 @@ public class Web extends HttpServlet
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
-		System.out.println("web");
+	
 		Constants cons = new Constants();
 		MemberDao member = new MemberDao();
 		
