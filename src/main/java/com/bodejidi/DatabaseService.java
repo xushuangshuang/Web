@@ -60,6 +60,7 @@ public class DatabaseService
 	public DatabaseService setLong(Long param) throws SQLException
 	{
 		pstmt.setLong(parameterIndex, param);
+		System.out.println(parameterIndex + "  " + param );
 		parameterIndex++;
 		return this;
 	}
@@ -67,6 +68,7 @@ public class DatabaseService
 	{
 		Date date = new Date();
 		pstmt.setDate(parameterIndex, new java.sql.Date(date.getTime()));
+		System.out.println(parameterIndex + "  " + param );
 		parameterIndex++;
 		return this;
 	}
