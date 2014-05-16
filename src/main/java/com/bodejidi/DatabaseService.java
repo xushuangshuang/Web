@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 public class DatabaseService
 {
 	static final String jdbcURL = "jdbc:mysql://localhost/test?user=root&password=";
+		
 	static final String jdbcDriver = "com.mysql.jdbc.Driver";
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
