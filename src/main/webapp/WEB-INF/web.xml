@@ -16,6 +16,15 @@
 		  <page-encoding>UTF-8</page-encoding>
 	  </jsp-property-group>
   </jsp-config>
+  <filter>
+	  <filter-name>UTFFilter</filter-name>
+	  <filter-class>com.bodejidi.UTFFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	  <filter-name>UTFFilter</filter-name>
+	  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
 
   <filter>
 	  <filter-name>ConstantTypeFilter</filter-name>
