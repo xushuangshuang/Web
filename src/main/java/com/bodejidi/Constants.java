@@ -16,7 +16,7 @@ public class Constants extends HttpServlet
 		member.setLastName(lastName);
 	        String password = req.getParameter("password");	
 		member.setPassword(password);
-		String phone = req.getParameter("phone");
+		Long phone = Long.valueOf(req.getParameter("phone"));
 		member.setPhone(phone);
 		String Email = req.getParameter("Email");
 		member.setEmail(Email);
