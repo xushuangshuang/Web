@@ -12,10 +12,11 @@ public class MemberDao
 				.setString(member.getUsername())
 				.setString(member.getEmail())
 				.execute();
+			System.out.println("SQL: " + sql);
 		}
 		catch(Exception e)
 		{
-			System.out.println("SQL: " + sql);
+			
 		}
 
 	
