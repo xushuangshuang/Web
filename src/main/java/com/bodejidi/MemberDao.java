@@ -10,10 +10,11 @@ public class MemberDao
 		String password = member.getPassword();
 		String firstName = member.getFirstName();
 		String lastName = member.getLastName();
+		Long phone = member.getPhone();
 		String address = member.getAddress();
 
 		String tb_username_sql = "INSERT INTO tb_username (username, userEmail) VALUE(?, ?) ";
-		String tb_personalInformation_sql = "INSERT INTO tb_personalInformation (username, password, firstName, lastName,  address) VALUE(?, ?, ?, ?, ?)";
+		String tb_personalInformation_sql = "INSERT INTO tb_personalInformation (username, password, phone, firstName, lastName,  address) VALUE(?, ?, ?, ?, ?, ?)";
 		DatabaseService bs = DatabaseService.newInstance();
 		try
 		{
@@ -25,6 +26,7 @@ public class MemberDao
 			bs.prepare(tb_personalInformation_sql)
 				.setString(username)
 				.setString(password)
+				.setLong(phone)
 				.setString(firstName)
 				.setString(lastName)
 				.setString(address)
