@@ -50,9 +50,11 @@ public class DatabaseService
 		return this;
 	}
 	public DatabaseService setString(String param) throws SQLException
-	{
+	{	
+		
 		pstmt.setString(parameterIndex, param);
-		parameterIndex++;
+		System.out.println(parameterIndex + "  " + param );
+		parameterIndex ++;
 		return this;
 	}
 	public DatabaseService setLong(Long param) throws SQLException
@@ -70,7 +72,8 @@ public class DatabaseService
 	}
 	public void execute() throws SQLException
 	{
-		pstmt.execute();
+		pstmt.executeUpdate();
+		
 	}
 
 	public void close()
