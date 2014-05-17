@@ -18,9 +18,21 @@ public class Web extends HttpServlet
 	{ 
 		
 		MemberService memberService = new MemberService();
-		memberService.save(Constants.doParma(req));	
-		getServletContext()
-			.getRequestDispatcher("/jsp/registerSuccess.jsp")
-			.forward(req, resp);	
+		Member member = Constants.doParma(req);
+		String action = member.getAction();
+		System.out.println(action);
+		
+		if("注册".equals(action))
+		{
+			memberService.save(member);	
+				getServletContext()
+					.getRequestDispatcher("/jsp/registerSuccess.jsp")
+					.forward(req, resp);	
+		}
+		else if(action == "登录")
+		{
+			
+		
+		}	
 	}
 }
