@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 
 public class DatabaseService
 {
+	static final Logger logger = LoggerFactory.getLogger(DatabaseService.class);
 	static final String jdbcURL = "jdbc:mysql://localhost/test?user=root&password=";
 		
 	static final String jdbcDriver = "com.mysql.jdbc.Driver";
@@ -53,14 +54,14 @@ public class DatabaseService
 	{	
 		
 		pstmt.setString(parameterIndex, param);
-		System.out.println(parameterIndex + "  " + param );
+		logger.trace("Set parameter value  " + parameterIndex + "  "+  param );
 		parameterIndex ++;
 		return this;
 	}
 	public DatabaseService setLong(Long param) throws SQLException
 	{
 		pstmt.setLong(parameterIndex, param);
-		System.out.println(parameterIndex + "  " + param );
+		logger.trace("Set parameter value  " + parameterIndex + "  "+  param );
 		parameterIndex++;
 		return this;
 	}
@@ -68,13 +69,14 @@ public class DatabaseService
 	{
 		Date date = new Date();
 		pstmt.setDate(parameterIndex, new java.sql.Date(date.getTime()));
-		System.out.println(parameterIndex + "  " + param );
+		logger.trace("Set parameter value  " + date.getTime());
 		parameterIndex++;
 		return this;
 	}
 	public void execute() throws SQLException
 	{
 		pstmt.executeUpdate();
+		logger.debug("Set parameter value  " );
 		
 	}
 
@@ -96,7 +98,7 @@ public class DatabaseService
 			}
 			catch(Exception e)
 			{
-			
+				logger.debug("Set parameter value  " + e );
 			}
 		}
 		
