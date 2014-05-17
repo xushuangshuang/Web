@@ -1,5 +1,8 @@
 package com.bodejidi;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class MemberDao
 {
 	public void userSave(Member member)
@@ -44,5 +47,19 @@ public class MemberDao
 			bs.close();
 		}
 	}
-
+	public Member getMemberByUsername(String username) throws SQLException
+	{
+		String sql = "SELECT * FORM tb_personalInformation WHERE username = ? ";
+		Member member = new Member();
+		DatabaseService ds = DatabaseService.newInstance();
+		ResultSet rs = ds.prepare(sql).setString(username).executeQuery();
+		rs.next();
+		member.setUsername(rs.getString(Constants.MEMBER_USERNAME));
+		member.setPassword(rs.getString(Constants.MEMBER_PASSWORD));
+		member.setFirstName(rs.getString(Constants.MEMBER_FIRSTNAME));
+		member.setLastName(rs.getString(Constants.MEMBER_LASTNAME));
+		member.setAddress(rs.getString(Constants.MEMBER_ADDRESS));
+		return member;
+	
+	}
 }
