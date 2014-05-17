@@ -5,7 +5,14 @@ import javax.servlet.http.HttpServletRequest;
 
 public class Constants extends HttpServlet
 {
-	public Member doParma(HttpServletRequest req)
+	public static final String MEMBER_USERNAME = "username";
+	public static final String MEMBER_PASSWORD = "password";
+	public static final String MEMBER_FIRSTNAME = "firstName";
+	public static final String MEMBER_LASTNAME = "lastName";
+	public static final String MEMBER_PHONE = "phone";
+	public static final String MEMBER_ADDRESS = "address";
+
+	public static Member doParma(HttpServletRequest req)
 	{
 		Member member = new Member();	
 		String username = req.getParameter("username");	
@@ -22,6 +29,8 @@ public class Constants extends HttpServlet
 		member.setEmail(Email);
 		String address = req.getParameter("address");
 		member.setAddress(address);
+		String action = req.getParameter("action");
+		member.setAction(action);
 		return member;
 	}
 }
