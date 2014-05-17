@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 public class MemberDao
 {
+	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	public void userSave(Member member)
 	{
 	
@@ -13,7 +14,7 @@ public class MemberDao
 		String password = member.getPassword();
 		String firstName = member.getFirstName();
 		String lastName = member.getLastName();
-		Long phone = member.getPhone();
+		Long phone = Long.valueOf(member.getPhone());
 		String address = member.getAddress();
 
 		String tb_username_sql = "INSERT INTO tb_username (username, userEmail) VALUE(?, ?) ";
@@ -39,7 +40,7 @@ public class MemberDao
 		}
 		catch(Exception e)
 		{
-		
+			logger.error("memberDao userSave " + e);
 		
 		}
 		finally
@@ -47,19 +48,30 @@ public class MemberDao
 			bs.close();
 		}
 	}
-	public Member getMemberByUsername(String username) throws SQLException
+	public Member getMemberByUsername(String username) 
 	{
-		String sql = "SELECT * FORM tb_personalInformation WHERE username = ? ";
+		String sql = "SELECT * FROM tb_personalInformation WHERE username = ? ";
 		Member member = new Member();
-		DatabaseService ds = DatabaseService.newInstance();
-		ResultSet rs = ds.prepare(sql).setString(username).executeQuery();
-		rs.next();
-		member.setUsername(rs.getString(Constants.MEMBER_USERNAME));
-		member.setPassword(rs.getString(Constants.MEMBER_PASSWORD));
-		member.setFirstName(rs.getString(Constants.MEMBER_FIRSTNAME));
-		member.setLastName(rs.getString(Constants.MEMBER_LASTNAME));
-		member.setAddress(rs.getString(Constants.MEMBER_ADDRESS));
+		DatabaseService ds = DatabaseService.newInstance();	
+		try
+		{
+			ResultSet rs = ds.prepare(sql).setString(username).executeQuery();
+			while(rs.next())
+			{
+				member.setUsername(rs.getString(Constants.MEMBER_USERNAME));
+				System.out.println("  dao" + rs.getString(Constants.MEMBER_USERNAME));
+				member.setPassword(rs.getString(Constants.MEMBER_PASSWORD));
+				System.out.println("  dao" + rs.getString(Constants.MEMBER_PASSWORD));
+			}
+		}
+		catch(SQLException e)
+		{
+			logger.error("memberDao getMemberByUsername" + e);
+		}
+		finally
+		{
+			ds.close();
+		}
 		return member;
-	
 	}
 }
