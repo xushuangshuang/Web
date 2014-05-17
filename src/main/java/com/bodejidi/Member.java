@@ -9,6 +9,7 @@ public class Member
 	private String Email;
 	private Long phone;
 	private String address;
+	private String action;
 
 	public void setFirstName(String firstName)
 	{
@@ -65,5 +66,13 @@ public class Member
 	public String getAddress()
 	{
 		return address;
+	}
+	public void setAction(String action)
+	{
+		this.action = action;
+	}
+	public String getAction()
+	{
+		return action;
 	}
 }
