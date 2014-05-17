@@ -29,10 +29,23 @@ public class Web extends HttpServlet
 					.getRequestDispatcher("/jsp/registerSuccess.jsp")
 					.forward(req, resp);	
 		}
-		else if(action == "登录")
+		else if("登录".equals(action))
 		{
-			
-		
+			String username = member.getUsername();
+			String password = member.getPassword();
+			Boolean  boo = memberService.loadQuery(username , password);
+			if(boo == true)
+			{
+				getServletContext()
+					.getRequestDispatcher("/jsp/loadSuccess.jsp")
+					.forward(req, resp);
+			}
+			else
+			{
+				getServletContext()
+					.getRequestDispatcher("/jsp/loadFailed.jsp")
+					.forward(req, resp);
+			}
 		}	
 	}
 }
