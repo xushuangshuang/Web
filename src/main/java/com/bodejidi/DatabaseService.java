@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.DriverManager;
 import java.util.Date;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 public class DatabaseService
 {
@@ -15,6 +17,7 @@ public class DatabaseService
 	static final String jdbcDriver = "com.mysql.jdbc.Driver";
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
+	private Statement stmt = null;
 	private int parameterIndex;
 
 	private static Connection createConnection () throws SQLException
@@ -50,6 +53,7 @@ public class DatabaseService
 		parameterIndex = 1;
 		return this;
 	}
+	
 	public DatabaseService setString(String param) throws SQLException
 	{	
 		
@@ -75,9 +79,14 @@ public class DatabaseService
 	}
 	public void execute() throws SQLException
 	{
-		pstmt.executeUpdate();
-		logger.debug("Set parameter value  " );
+		pstmt.execute();
+		logger.debug("Do sql execute  " );
 		
+	}
+	public ResultSet executeQuery() throws SQLException
+	{
+		logger.debug("Do sql executeQuery" );	
+		return pstmt.executeQuery();
 	}
 
 	public void close()
