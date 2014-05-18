@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 public class Web extends HttpServlet
 {
@@ -16,7 +17,7 @@ public class Web extends HttpServlet
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{ 
-		
+			
 		MemberService memberService = new MemberService();
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
@@ -36,6 +37,8 @@ public class Web extends HttpServlet
 			Boolean  boo = memberService.loadQuery(username , password);
 			if(boo == true)
 			{
+				HttpSession session = req.getSession();
+				session.setAttribute("session", "100");
 				getServletContext()
 					.getRequestDispatcher("/jsp/loadSuccess.jsp")
 					.forward(req, resp);
