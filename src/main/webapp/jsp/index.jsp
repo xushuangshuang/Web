@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<h1>欢迎</h1>	
-		<form action="/practice/practice" method="POST">
+		<form action="" method="POST">
 			<label>用户名</label>
 			<input type="text" name="username"/></br>
 			<label>密码</label>
