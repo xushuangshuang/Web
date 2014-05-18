@@ -10,9 +10,11 @@ import javax.servlet.http.HttpSession;
 
 public class Web extends HttpServlet
 {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException
 	{
-	
+		getServletContext()
+			.getRequestDispatcher("/jsp/index.jsp")
+			.forward(req, resp);
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -20,6 +22,7 @@ public class Web extends HttpServlet
 			
 		MemberService memberService = new MemberService();
 		Member member = Constants.doParma(req);
+		req.setAttribute("member", member);
 		String action = member.getAction();
 		System.out.println(action);
 		
