@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<meta http-equiv="refresh" content="5"; URL="/practice">
+		<meta http-equiv="refresh" content="5; URL=Information.jsp">
 		<title>load</title>
 	</head>
 	<body>
