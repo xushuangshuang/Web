@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta http-equiv="refresh" content="5"; URL="/practice">
 		<title>load</title>
 	</head>
 	<body>
