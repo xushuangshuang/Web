@@ -5,5 +5,9 @@ src/main/webapp/*.swp
 
 src/main/webapp/WEB-INF/*.swp
 
+src/main/webapp/{jsp, servlet}/*.swp
+
+
+
 src/test/java/com/bodejidi/*.swp
 
