@@ -12,9 +12,20 @@ public class Web extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException
 	{
-		getServletContext()
-			.getRequestDispatcher("/jsp/index.jsp")
-			.forward(req, resp);
+		Member member = Constants.doParma(req);
+		String action = member.getAction();
+		if("register".equals(action))
+		{
+			getServletContext()
+				.getRequestDispatcher("/servlet/register.jsp")
+				.forward(req, resp);
+		}
+		else
+		{
+			getServletContext()
+				.getRequestDispatcher("/jsp/index.jsp")
+				.forward(req, resp);
+		}
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
