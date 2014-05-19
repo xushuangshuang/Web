@@ -2,14 +2,5 @@
 
 请将sql包下的.sql文件，导入到MYSQL数据库中
 
-清除脚本
+执行请直接运行dispose.sh 文件即可
 
-clean.sh
-
-编译脚本
-
- compile.sh
-
-部署脚本
-
-deply.sh
