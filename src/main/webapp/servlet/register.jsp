@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<h1>注册</h1>
-		<form action="/practice/practice" method="POST">
+		<form action="/practice/register" method="POST">
 			<label>firstName</label>
 			<input type="text" name="firstName"/></br>
 			<label>lastName</label>
