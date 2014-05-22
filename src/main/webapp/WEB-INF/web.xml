@@ -47,8 +47,8 @@
 	  <servlet-name>Register</servlet-name>
 	  <servlet-class>com.bodejidi.Register</servlet-class>
   </servlet>
-  <servelt-mapping>
+  <servlet-mapping>
 	  <servlet-name>Register</servlet-name>
-	  <servlet-mapping>/Register</servlet-mapping>
+	  <url-pattern>/register</url-pattern>
   </servlet-mapping>
 </web-app>
