@@ -14,12 +14,18 @@ public class Register extends HttpServlet
 			.getRequestDispatcher("/servlet/register.jsp")
 			.forward(req, resp);	
 	}
-	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
 		MemberService memberService = new MemberService();
 		Member member = Constants.doParma(req);
-		memberService.save(member);
-	
+		String action = member.getAction();
+		if("注册".equals(action))
+		{
+			memberService.save(member);
+			getServletContext()
+				.getRequestDispatcher("/servlet/registerSuccess.jsp")
+				.forward(req, resp);
+		}
 	}
 
 }
