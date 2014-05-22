@@ -52,7 +52,7 @@ public class Web extends HttpServlet
 			if(boo == true)
 			{
 				HttpSession session = req.getSession();
-				session.setAttribute("session", "100");
+				req.getSession().setAttribute("username", username);
 				getServletContext()
 					.getRequestDispatcher("/jsp/loadSuccess.jsp")
 					.forward(req, resp);
