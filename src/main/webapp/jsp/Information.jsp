@@ -1,10 +1,11 @@
-<%@import="com.bodejidi.Web"%>
 <html>
 	<head>
 		<title>Information</title>
 	</head>
 	<body>
-		<h1><%=session.getAttribute(username)%></h1>
+		<%String username = (String)request.getSession().getAttribute("username");%>
+
+		<h2><%=username%></h2>
 
 	</body>
 </html>
