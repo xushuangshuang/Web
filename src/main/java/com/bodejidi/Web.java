@@ -30,22 +30,24 @@ public class Web extends HttpServlet
 		String action = member.getAction();
 		System.out.println(action);
 		String username = member.getUsername();
-			String password = member.getPassword();
+		String password = member.getPassword();
+		if("登录".equals(action))
+		{
 			Boolean  boo = memberService.loadQuery(username , password);
-			if(boo == true)
-			{
-				HttpSession session = req.getSession();
-				req.getSession().setAttribute("username", username);
-				getServletContext()
-					.getRequestDispatcher("/jsp/loadSuccess.jsp")
-					.forward(req, resp);
-			}
-			else
-			{
-				getServletContext()
-					.getRequestDispatcher("/jsp/loadFailed.jsp")
-					.forward(req, resp);
-			}
-			
+				if(boo == true)
+				{
+					HttpSession session = req.getSession();
+					req.getSession().setAttribute("username", username);
+					getServletContext()
+						.getRequestDispatcher("/jsp/loadSuccess.jsp")
+						.forward(req, resp);
+				}
+				else
+				{
+					getServletContext()
+						.getRequestDispatcher("/jsp/loadFailed.jsp")
+						.forward(req, resp);
+				}
+		}	
 	}
 }
