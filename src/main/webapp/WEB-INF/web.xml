@@ -43,4 +43,12 @@
 	  <servlet-name>practice</servlet-name>
 	  <url-pattern>/practice</url-pattern>
   </servlet-mapping>
+  <servlet>
+	  <servlet-name>Register</servlet-name>
+	  <servlet-class>com.bodejidi.Register</servlet-class>
+  </servlet>
+  <servelt-mapping>
+	  <servlet-name>Register</servlet-name>
+	  <servlet-mapping>/dispaly</servlet-mapping>
+  </servlet-mapping>
 </web-app>
