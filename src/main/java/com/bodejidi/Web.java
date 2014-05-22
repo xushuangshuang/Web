@@ -15,18 +15,11 @@ public class Web extends HttpServlet
 	{
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
-		if("register".equals(action))
-		{
-			getServletContext()
-				.getRequestDispatcher("/servlet/register.jsp")
-				.forward(req, resp);
-		}
-		else
-		{
-			getServletContext()
-				.getRequestDispatcher("/jsp/index.jsp")
-				.forward(req, resp);
-		}
+		
+		getServletContext()
+			.getRequestDispatcher("/jsp/index.jsp")
+			.forward(req, resp);
+	
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -36,17 +29,7 @@ public class Web extends HttpServlet
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
 		System.out.println(action);
-		
-		if("注册".equals(action))
-		{
-			memberService.save(member);	
-				getServletContext()
-					.getRequestDispatcher("/jsp/registerSuccess.jsp")
-					.forward(req, resp);	
-		}
-		else if("登录".equals(action))
-		{
-			String username = member.getUsername();
+		String username = member.getUsername();
 			String password = member.getPassword();
 			Boolean  boo = memberService.loadQuery(username , password);
 			if(boo == true)
@@ -63,6 +46,6 @@ public class Web extends HttpServlet
 					.getRequestDispatcher("/jsp/loadFailed.jsp")
 					.forward(req, resp);
 			}
-		}	
+			
 	}
 }
