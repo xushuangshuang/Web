@@ -1,13 +1,10 @@
-<%@ com.bodejidi.Member%>
-<%
-	Member member = (Member) req.getAttribute("member");
-%> 
+<%@import="com.bodejidi.Web"%>
 <html>
 	<head>
 		<title>Information</title>
 	</head>
 	<body>
-		<h1><%= member.getUsername%></h1>
+		<h1><%=session.getAttribute(username)%></h1>
 
 	</body>
 </html>
