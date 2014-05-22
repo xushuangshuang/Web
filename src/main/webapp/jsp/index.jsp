@@ -11,7 +11,7 @@
 			<input type="password" name="password"/></br>
 			<input type="submit" name="action" value="登录"/>
 		</form>
-		<a href="?action=register">注册</a>
+		<a href="localhost:28080/pratice/Register">注册</a>
 		
 	</body>
 </html>
