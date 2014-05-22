@@ -49,6 +49,6 @@
   </servlet>
   <servelt-mapping>
 	  <servlet-name>Register</servlet-name>
-	  <servlet-mapping>/dispaly</servlet-mapping>
+	  <servlet-mapping>/Register</servlet-mapping>
   </servlet-mapping>
 </web-app>
