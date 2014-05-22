@@ -12,9 +12,9 @@
 			<label>username</label>
 			<input type="text" name="username"/></br>
 			<label>password</label>
-			<input type="text" name="password"/></br>
+			<input type="password" name="password"/></br>
 			<label>repassword</label>
-			<input type="text" name="repassword"/></br>
+			<input type="password" name="repassword"/></br>
 			<label>Email</label>
 			<input type="text" name="Email"/></br>
 			<label>phone</label>
