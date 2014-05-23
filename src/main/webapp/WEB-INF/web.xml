@@ -51,4 +51,12 @@
 	  <servlet-name>Register</servlet-name>
 	  <url-pattern>/register</url-pattern>
   </servlet-mapping>
+  <servlet>
+	  <servlet-name>display</servlet-name>
+	  <servlet-class>com.bodejidi.Display</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>display</servlet-name>
+	  <url-pattern>/display</url-pattern>
+  </servlet-mapping>
 </web-app>
