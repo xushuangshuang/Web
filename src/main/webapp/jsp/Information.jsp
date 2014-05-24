@@ -3,7 +3,9 @@
 		<title>Information</title>
 	</head>
 	<body>
+		<table align="center">
 		<%String username = (String)request.getSession().getAttribute("username");%>
+		<td>
 		<%
 			if(null == username)
 			{
@@ -15,11 +17,12 @@
 				out.print("您好  " + username);
 			}
 		%>
-		<a href="/practice/practice">登录</a><br/>
-		<form action="display" method="POST">
-		<input type="submit" name="action" value="注销"/>
-		</form>
-		<a href="/practice/register">注册</a><br/>
+		</td>
+		<td><a href="/practice/practice">登录</a></td>
+		<td><a href="?action=logout">注销</a></td>
+		<td><a href="/practice/register">注册</a><br/></td>	
+	</table>
+		
 
 	</body>
 </html>
