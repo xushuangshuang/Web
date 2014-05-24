@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
 
 public class Register extends HttpServlet
 {
@@ -19,6 +20,9 @@ public class Register extends HttpServlet
 		MemberService memberService = new MemberService();
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
+		String username = member.getUsername();
+		req.getSession().setAttribute("username", username);
+
 		if("注册".equals(action))
 		{
 			memberService.save(member);
