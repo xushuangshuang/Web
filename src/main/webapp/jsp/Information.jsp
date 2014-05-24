@@ -1,6 +1,10 @@
 <html>
 	<head>
 		<title>Information</title>
+		<style type="text/css">
+  			 a:link,a:visited{text-decoration:none;}
+		</style>
+		
 	</head>
 	<body>
 		<table align="center">
