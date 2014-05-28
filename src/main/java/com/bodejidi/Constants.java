@@ -33,6 +33,12 @@ public class Constants extends HttpServlet
 		member.setAction(action);
 		String admin = req.getParameter("admin");
 		member.setSession(admin);
+		String workcode = req.getParameter("workcode");
+		member.setWorkcode(workcode);
+		String workAddress = req.getParameter("workAddress");
+		member.setWorkAddress(workAddress);
+		String position = req.getParameter("position");
+		member.setPosition(position);
 		return member;
 	}
 }
