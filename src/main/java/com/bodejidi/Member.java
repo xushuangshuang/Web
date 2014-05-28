@@ -11,7 +11,32 @@ public class Member
 	private String address;
 	private String action;
 	private String session;
-	
+	private String workcode;
+	private String workAddress;
+	private String position;
+
+	public void setWorkcode(String workcode)
+	{
+		this.workcode = workcode;
+	}
+	public String getWorkcode()
+	{
+		return workcode;
+	}public void setWorkAddress(String workAddress)
+	{
+		this.workAddress = workAddress;
+	}
+	public String getWorkAddress()
+	{
+		return workAddress;
+	}public void setPosition(String position)
+	{
+		this.position = position;
+	}
+	public String getPosition()
+	{
+		return position;
+	}
 	public void setSession(String session)
 	{
 		this.session = session;
