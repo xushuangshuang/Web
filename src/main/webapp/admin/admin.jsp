@@ -13,7 +13,7 @@
 			<td>&nbsp;</td>
 			<td><input type="password" name="password"/></br></td>
 			<td><input type="submit" name="action" value="登录"/></td>
-			<tb><input type="hidden"  name="session" value="admin"></tb>
+			<td><input type="hidden"  name="admin" value="admin"></td>
 			<td>&nbsp;</td>
 		</form>
 		<td><a href="/practice/register">注册</a></td>
