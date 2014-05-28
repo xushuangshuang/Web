@@ -8,14 +8,12 @@ public class MemberService
 		memberDao.userSave(member);
 		
 	}
-	public Boolean loadQuery(String username, String password)
+	public Boolean loadQuery(String username, String password, String admin)
 	{
 		MemberDao memberDao = new MemberDao();
-		Member member = memberDao.getMemberByUsername(username);
+		Member member = memberDao.getMemberByUsername(username, admin);
 		String paraUsername = member.getUsername();
 		String paraPassword = member.getPassword();
-		String session = member.getSession();
-		System.out.println(" member service  " + session);
 		System.out.println(" member service  " +paraUsername);
 		System.out.println(" member service  " +paraPassword);
 		if(username.equals(paraUsername) && password.equals(paraPassword))
