@@ -11,21 +11,33 @@ public class Register extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
-		getServletContext()
-			.getRequestDispatcher("/servlet/register.jsp")
-			.forward(req, resp);	
+		Member member = Constants.doParma(req);
+		String workcode = member.getWorkcode();
+		if(workcode == null)
+		{
+			getServletContext()
+				.getRequestDispatcher("/servlet/register.jsp")
+				.forward(req, resp);	
+		}
+		else
+		{
+			getServletContext()
+				.getRequestDispatcher("/servlet/adminRegister.jsp")
+				.forward(req, resp);
+		}
 	}
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
 		MemberService memberService = new MemberService();
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
+		String workcode = member.getWorkcode();
 		String username = member.getUsername();
 		req.getSession().setAttribute("username", username);
 
 		if("注册".equals(action))
 		{
-			memberService.save(member);
+			memberService.save(member, workcode);
 			getServletContext()
 				.getRequestDispatcher("/servlet/registerSuccess.jsp")
 				.forward(req, resp);
