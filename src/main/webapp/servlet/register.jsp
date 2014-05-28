@@ -1,27 +1,51 @@
 <html>
 	<head>
 		<title>register</title>
+		<style type="text/css">
+  			 a:link,a:visited{text-decoration:none;}
+		</style>
 	</head>
 	<body>
-		<h1>注册</h1>
+		<h1 align=center>注册</h1>
 		<form action="/practice/register" method="POST">
-			<label>firstName</label>
-			<input type="text" name="firstName"/></br>
-			<label>lastName</label>
-			<input type="text" name="lastName"/></br>
-			<label>username</label>
-			<input type="text" name="username"/></br>
-			<label>password</label>
-			<input type="password" name="password"/></br>
-			<label>repassword</label>
-			<input type="password" name="repassword"/></br>
-			<label>Email</label>
-			<input type="text" name="Email"/></br>
-			<label>phone</label>
-			<input type="text" name="phone"/></br>
-			<label>address</label>
-			<input type="text" name="address"/></br>
-			<input type="submit" name="action" value="注册"/>
+			<table align=center>
+				<tr>
+					<td><label>firstName</label></td>
+					<td><input type="text" name="firstName"/></td>
+				</tr>
+				<tr>
+					<td><label>lastName</label></td>
+					<td><input type="text" name="lastName"/></td>
+				</tr>
+				<tr>
+					<td><label>username</label></td>
+					<td><input type="text" name="username"/></td>
+				</tr>
+				<tr>
+					<td><label>password</label></td>
+					<td><input type="password" name="password"/></td>
+				</tr>
+				<tr>
+					<td><label>repassword</label></td>
+					<td><input type="password" name="repassword"/></td>
+				</tr>
+				<tr>	
+					<td><label>Email</label></td>
+					<td><input type="text" name="Email"/></td>
+				</tr>
+				<tr>	
+					<td><label>phone</label></td>
+					<td><input type="text" name="phone"/></td>
+				</tr>
+				<tr>	
+					<td><label>address</label></td>
+					<td><input type="text" name="address"/></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>	
+					<td><input type="submit" name="action" value="注册"/></td>
+				</tr>
+			</table>
 		</form>
 	</body>
 
