@@ -21,6 +21,10 @@
 					<td><label>repassword</label></td>
 					<td><input type="password" name="repassword"/></td>
 				</tr>
+				<tr>
+					<td><label>workcode</label></td>
+					<td><input type="text" name="workcode"/></td>
+				</tr>
 				<tr>	
 					<td><label>workAddress</label></td>
 					<td><input type="text" name="Email"/></td>
