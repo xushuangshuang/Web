@@ -28,7 +28,7 @@ public class Admin extends HttpServlet
 		String password = member.getPassword();
 		if("登录".equals(action))
 		{
-			Boolean  boo = memberService.loadQuery(username , password);
+			Boolean  boo = memberService.loadQuery(username , password, admin);
 				if(boo == true)
 				{
 					HttpSession session = req.getSession();
