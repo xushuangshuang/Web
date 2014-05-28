@@ -10,7 +10,16 @@ public class Member
 	private String phone;
 	private String address;
 	private String action;
-
+	private String session;
+	
+	public void setSession(String session)
+	{
+		this.session = session;
+	}
+	public String getSession()
+	{
+		return session;
+	}
 	public void setFirstName(String firstName)
 	{
 		this.firstName = firstName;

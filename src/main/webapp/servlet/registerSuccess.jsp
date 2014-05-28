@@ -4,6 +4,8 @@
 		<meta http-equiv="refresh" content="5; URL=/practice/display">
 	</head>
 	<body>
-		<h1> Register Success</h1>
+		<table align=center>
+			<td><h1> Register Success</h1></td>
+		</table>
 	</body>
 </html>

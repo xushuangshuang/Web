@@ -3,30 +3,27 @@ package com.bodejidi;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 
-
-public class Web extends HttpServlet
+public class Admin extends HttpServlet
 {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		getServletContext()
-			.getRequestDispatcher("/jsp/index.jsp")
+			.getRequestDispatcher("/admin/admin.jsp")
 			.forward(req, resp);
-	
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{ 
-			
+	{
 		MemberService memberService = new MemberService();
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
-		String admin = null;
-		System.out.println(action);
+		String admin = member.getSession();
+		System.out.println(admin);
 		String username = member.getUsername();
 		String password = member.getPassword();
 		if("登录".equals(action))

@@ -4,9 +4,11 @@
 		<title>load</title>
 	</head>
 	<body>
-		<h2><%String username = request.getParameter("username");%><h2></br>
-	<p>恭喜			
-		<%=username%>
-		<h1>load  Success</h1>
+		<table align=center>
+		<h2><%String username = request.getParameter("username");%><h2>
+				<p align=center>恭喜</p>			
+				<td><h2><%=username%><h2></td>
+				<td><h1>load  Success</h1></td>
+		</table>
 	</body>
 </html>
