@@ -4,6 +4,7 @@
 		<title>failed</title>
 	</head>
 	<body>
-		<h1>Failed</h1>
+		<table align=center>
+			<td><h1>sorry Failed</h1></td>
 	</body>
 </html>
