@@ -2,10 +2,10 @@ package com.bodejidi;
 
 public class MemberService
 {
-	public void save(Member member)
+	public void save(Member member, String workcode)
 	{
 		MemberDao memberDao = new MemberDao();
-		memberDao.userSave(member);
+		memberDao.userSave(member, workcode);
 		
 	}
 	public Boolean loadQuery(String username, String password, String admin)
