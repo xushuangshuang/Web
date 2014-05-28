@@ -22,7 +22,8 @@ public class Admin extends HttpServlet
 		MemberService memberService = new MemberService();
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
-		System.out.println(action);
+		String admin = member.getSession();
+		System.out.println(admin);
 		String username = member.getUsername();
 		String password = member.getPassword();
 		if("登录".equals(action))
