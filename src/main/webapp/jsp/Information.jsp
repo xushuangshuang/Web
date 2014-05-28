@@ -439,9 +439,6 @@
 
 <!-- TWITTER TAGS --><meta charset="utf-8"><meta name="twitter:card" content="photo" /><meta name="twitter:description" content="cube spheres" /><meta name="twitter:image" content="http://24.media.tumblr.com/30fec9f9b10c2c2e39dbda1fa5fc836a/tumblr_n5y04q6ZAv1r2geqjo1_500.gif" /><meta name="twitter:url" content="http://beesandbombs.tumblr.com/post/86437726944/cube-spheres" /><meta name="twitter:site" content="tumblr" /><meta name="twitter:app:name:iphone" content="Tumblr" /><meta name="twitter:app:name:ipad" content="Tumblr" /><meta name="twitter:app:name:googleplay" content="Tumblr" /><meta name="twitter:app:id:iphone" content="305343404" /><meta name="twitter:app:id:ipad" content="305343404" /><meta name="twitter:app:id:googleplay" content="com.tumblr" /><meta name="twitter:app:url:iphone" content="tumblr://x-callback-url/blog?blogName=beesandbombs&amp;postID=86437726944&amp;referrer=twitter-cards" /><meta name="twitter:app:url:ipad" content="tumblr://x-callback-url/blog?blogName=beesandbombs&amp;postID=86437726944&amp;referrer=twitter-cards" /><meta name="twitter:app:url:googleplay" content="tumblr://x-callback-url/blog?blogName=beesandbombs&amp;postID=86437726944&amp;referrer=twitter-cards" />
 	<title>Information</title>
-	<style type="text/css">
-  		 a:link,a:visited{text-decoration:none;}
-	</style>
 </head>
     
        
