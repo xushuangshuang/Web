@@ -49,7 +49,7 @@ public class MemberDao
 			bs.close();
 		}
 	}
-	public Member getMemberByUsername(String username) 
+	public Member getMemberByUsername(String username, String admin) 
 	{
 		Member member = new Member();
 		DatabaseService ds = DatabaseService.newInstance();
