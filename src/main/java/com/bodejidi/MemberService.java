@@ -1,7 +1,5 @@
 package com.bodejidi;
 
-
-
 public class MemberService
 {
 	public void save(Member member)
@@ -16,8 +14,10 @@ public class MemberService
 		Member member = memberDao.getMemberByUsername(username);
 		String paraUsername = member.getUsername();
 		String paraPassword = member.getPassword();
-		System.out.println(paraUsername);
-		System.out.println(paraPassword);
+		String session = member.getSession();
+		System.out.println(" member service  " + session);
+		System.out.println(" member service  " +paraUsername);
+		System.out.println(" member service  " +paraPassword);
 		if(username.equals(paraUsername) && password.equals(paraPassword))
 		{
 			return true;
