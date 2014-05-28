@@ -3,15 +3,20 @@
 		<title>login</title>
 	</head>
 	<body>
-		<h1>欢迎</h1>	
-		<form action="practice" method="POST">
-			<label>用户名</label>
-			<input type="text" name="username"/></br>
-			<label>密码</label>
-			<input type="password" name="password"/></br>
-			<input type="submit" name="action" value="登录"/>
+		<table align=center>
+		<h1 align=center>欢迎</h1>		
+		<form action="practice" method="POST">			
+			<td><label>用户名</label></td>
+			<td>&nbsp;</td>
+			<td><input type="text" name="username"/></td></br>
+			<td><label>密码</label></td>
+			<td>&nbsp;</td>
+			<td><input type="password" name="password"/></br></td>
+			<td><input type="submit" name="action" value="登录"/></td>
+			<td>&nbsp;</td>
 		</form>
-		<a href="/practice/register">注册</a>
+		<td><a href="/practice/register">注册</a></td>
+		</table>
 		
 	</body>
 </html>
