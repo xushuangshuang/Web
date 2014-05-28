@@ -6,6 +6,8 @@ import java.sql.SQLException;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	String username_sql = "SELECT * FROM tb_personalInformation WHERE username = ? ";
+	String admin_sql = "SELECT * FROM administrator WHERE username = ? ";
 	public void userSave(Member member)
 	{
 	
@@ -16,7 +18,6 @@ public class MemberDao
 		String lastName = member.getLastName();
 		Long phone = Long.valueOf(member.getPhone());
 		String address = member.getAddress();
-
 		String tb_username_sql = "INSERT INTO tb_username (username, userEmail) VALUE(?, ?) ";
 		String tb_personalInformation_sql = "INSERT INTO tb_personalInformation (username, password, phone, firstName, lastName,  address) VALUE(?, ?, ?, ?, ?, ?)";
 		DatabaseService bs = DatabaseService.newInstance();
@@ -50,18 +51,26 @@ public class MemberDao
 	}
 	public Member getMemberByUsername(String username) 
 	{
-		String sql = "SELECT * FROM tb_personalInformation WHERE username = ? ";
 		Member member = new Member();
-		DatabaseService ds = DatabaseService.newInstance();	
+		DatabaseService ds = DatabaseService.newInstance();
+		String sql;
+		if(admin == null)
+		{
+			sql = username_sql;
+		}
+		else
+		{
+			sql = admin_sql;
+		}	
 		try
 		{
 			ResultSet rs = ds.prepare(sql).setString(username).executeQuery();
 			while(rs.next())
 			{
 				member.setUsername(rs.getString(Constants.MEMBER_USERNAME));
-				System.out.println("  dao" + rs.getString(Constants.MEMBER_USERNAME));
+				System.out.println("Member  dao" + rs.getString(Constants.MEMBER_USERNAME));
 				member.setPassword(rs.getString(Constants.MEMBER_PASSWORD));
-				System.out.println("  dao" + rs.getString(Constants.MEMBER_PASSWORD));
+				System.out.println("Member  dao" + rs.getString(Constants.MEMBER_PASSWORD));
 			}
 		}
 		catch(SQLException e)
