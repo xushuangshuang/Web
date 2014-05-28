@@ -13,9 +13,6 @@ public class Web extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException
 	{
-		Member member = Constants.doParma(req);
-		String action = member.getAction();
-		
 		getServletContext()
 			.getRequestDispatcher("/jsp/index.jsp")
 			.forward(req, resp);
