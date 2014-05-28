@@ -15,7 +15,6 @@ public class Admin extends HttpServlet
 		getServletContext()
 			.getRequestDispatcher("/admin/admin.jsp")
 			.forward(req, resp);
-			req.getSession().setAttribute("admin", "admin");
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
