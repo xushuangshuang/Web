@@ -61,7 +61,7 @@
   </servlet-mapping>
   <servlet>
 	  <servlet-name>admin</servlet-name>
-	  <servlet-class>com.bodejidi.admin</servlet-class>
+	  <servlet-class>com.bodejidi.Admin</servlet-class>
   </servlet>
   <servlet-mapping>
 	  <servlet-name>admin</servlet-name>
