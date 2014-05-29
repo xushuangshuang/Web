@@ -13,7 +13,6 @@ public class MemberDao
 	String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";
 	public void userSave(Member member, String workcode)
 	{
-		Long code = (Long)Long.valueOf(workcode);
 		String Email = member.getEmail();
 		String username = member.getUsername();
 		String password = member.getPassword();
@@ -21,13 +20,15 @@ public class MemberDao
 		String lastName = member.getLastName();
 		String position = member.getPosition();
 		String workAddress = member.getWorkAddress(); 
-		Long phone = Long.valueOf(member.getPhone());
 		String address = member.getAddress();
 		DatabaseService bs = DatabaseService.newInstance();
 		try
 		{
+			System.out.println("Dao1 " + workcode);
+			System.out.println("Dao2 " + workcode);
 			if(workcode == null)
-			{	
+			{
+				Long phone = Long.valueOf(member.getPhone());	
 				bs.prepare(tb_username_sql)
 					.setString(username)
 					.setString(Email)
@@ -45,6 +46,7 @@ public class MemberDao
 			}
 			else
 			{
+				Long code = Long.valueOf(workcode);
 				bs.prepare(admin_register_sql)
 					.setString(username)
 					.setString(password)
