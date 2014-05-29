@@ -3,12 +3,43 @@
 		<title>login</title>
 		<style type="text/css">
   			 a:link,a:visited{text-decoration:none;}
-		</style>
+		 </style>
+		<script type="text/javascript">
+
+			function validate_required(field,alerttxt)
+			{
+				with (field)
+				{
+  					if (value==null||value=="")
+					{
+						alert(alerttxt);
+						return false
+					}
+					else
+				       	{
+						return true
+					}
+  				}
+			}
+
+			function validate_form(thisform)
+			{
+				with (thisform)
+				{
+  					if (validate_required(username,"username cannot null !")==false)
+					{
+						email.focus();
+						return false
+					}
+  				}
+			}
+		</script>
+		 
 	</head>
 	<body>
 		<table align=center>
 		<h1 align=center>欢迎</h1>		
-		<form action="admin" method="POST">
+		<form action="admin" onsubmit="return validate_form(this)" method="POST">
 			<tr>			
 				<td><label>用户名</label></td>
 				<td>&nbsp;</td>
