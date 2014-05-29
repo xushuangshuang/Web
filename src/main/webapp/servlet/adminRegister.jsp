@@ -30,8 +30,8 @@
 					<td><input type="text" name="Email"/></td>
 				</tr>
 				<tr>	
-					<td><label>positiion</label></td>
-					<td><input type="text" name="phone"/></td>
+					<td><label>position</label></td>
+					<td><input type="text" name="position"/></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>	
