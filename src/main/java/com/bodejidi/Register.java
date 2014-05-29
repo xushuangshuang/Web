@@ -40,7 +40,7 @@ public class Register extends HttpServlet
 		{
 			memberService.save(member, workcode);
 			getServletContext()
-				.getRequestDispatcher("/servlet/registerSuccess.jsp")
+				.getRequestDispatcher("/admin/adminManage.jsp")
 				.forward(req, resp);
 		}
 	}
