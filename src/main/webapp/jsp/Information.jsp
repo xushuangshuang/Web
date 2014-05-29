@@ -464,6 +464,7 @@
 		%>
 		</td>
 		<td>&nbsp;</td>
+		<td>&nbsp;</td>
 		<td><a href="/practice/practice">登录</a></td>
 		<td>&nbsp;</td>
 		<td><a href="?action=logout">注销</a></td>
