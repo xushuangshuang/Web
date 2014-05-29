@@ -27,7 +27,7 @@
 				</tr>
 				<tr>	
 					<td><label>workAddress</label></td>
-					<td><input type="text" name="Email"/></td>
+					<td><input type="text" name="workAddress"/></td>
 				</tr>
 				<tr>	
 					<td><label>position</label></td>
