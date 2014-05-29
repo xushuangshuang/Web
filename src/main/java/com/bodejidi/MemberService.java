@@ -4,9 +4,9 @@ public class MemberService
 {
 	public void save(Member member, String workcode)
 	{
+		System.out.println("MemberService  " + workcode);
 		MemberDao memberDao = new MemberDao();
 		memberDao.userSave(member, workcode);
-		
 	}
 	public Boolean loadQuery(String username, String password, String admin)
 	{
