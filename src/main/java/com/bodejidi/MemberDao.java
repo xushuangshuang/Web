@@ -55,7 +55,7 @@ public class MemberDao
 					.setString(workAddress)
 					.setString(position)
 					.execute();
-				System.out.println("SQL: " + admin_sql);
+				System.out.println("SQL: " + admin_register_sql);
 			}
 		}
 		catch(Exception e)
