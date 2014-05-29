@@ -489,14 +489,14 @@
                         <img src="http://24.media.tumblr.com/30fec9f9b10c2c2e39dbda1fa5fc836a/tumblr_n5y04q6ZAv1r2geqjo1_500.gif" alt="cube spheres" />
 			</a>
                         
-                            <div class="caption"><p>cube spheres</p></div>
+                            <div class="caption"></div>
                         
 	                
 			
-			<div class="notecount">Notes: 192</div>
+			<div class="notecount"></div>
 			
 			
-			<div class="date"> <a  href="http://beesandbombs.tumblr.com/post/86437726944/cube-spheres">[Posted: 21 May 14]</a></div>
+			<div class="date"> <a  href="http://beesandbombs.tumblr.com/post/86437726944/cube-spheres"></div>
                         
 			
 			 
