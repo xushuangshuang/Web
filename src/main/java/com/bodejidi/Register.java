@@ -12,17 +12,17 @@ public class Register extends HttpServlet
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
 		Member member = Constants.doParma(req);
-		String workcode = member.getWorkcode();
-		if(workcode == null)
+		String action = member.getAction();
+		if("admin".equals(action))
 		{
 			getServletContext()
-				.getRequestDispatcher("/servlet/register.jsp")
+				.getRequestDispatcher("/servlet/adminRegister.jsp")
 				.forward(req, resp);	
 		}
 		else
 		{
 			getServletContext()
-				.getRequestDispatcher("/servlet/adminRegister.jsp")
+				.getRequestDispatcher("/servlet/register.jsp")
 				.forward(req, resp);
 		}
 	}
@@ -32,6 +32,7 @@ public class Register extends HttpServlet
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
 		String workcode = member.getWorkcode();
+		System.out.println(action + "  " + workcode);
 		String username = member.getUsername();
 		req.getSession().setAttribute("username", username);
 
