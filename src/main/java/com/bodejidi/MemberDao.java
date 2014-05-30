@@ -11,6 +11,7 @@ public class MemberDao
 	String tb_username_sql = "INSERT INTO tb_username (username, userEmail) VALUE(?, ?) ";
 	String tb_personalInformation_sql = "INSERT INTO tb_personalInformation (username, password, phone, firstName, lastName,  address) VALUE(?, ?, ?, ?, ?, ?)";
 	String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";
+	String user_inquiry_username = "SELECT FORM tb_personalInformation WHERE username = ?";
 	public void userSave(Member member, String workcode)
 	{
 		String Email = member.getEmail();
@@ -24,8 +25,6 @@ public class MemberDao
 		DatabaseService bs = DatabaseService.newInstance();
 		try
 		{
-			System.out.println("Dao1 " + workcode);
-			System.out.println("Dao2 " + workcode);
 			if(workcode == null)
 			{
 				Long phone = Long.valueOf(member.getPhone());	
@@ -95,6 +94,32 @@ public class MemberDao
 		catch(SQLException e)
 		{
 			logger.error("memberDao getMemberByUsername" + e);
+		}
+		finally
+		{
+			ds.close();
+		}
+		return member;
+	}
+
+	public Member getUsernameInformation(String username)
+	{
+		Member member = new Member();
+		DatabaseService ds = DatabaseService.newInstance();
+		try
+		{
+			ResultSet rs = ds.prepare(user_inquiry_username).setString(username).executeQuery();
+			while(rs.next())
+			{
+				member.setUsername(rs.getString(Constants.MEMBER_USERNAME));
+				System.out.println("Member  dao" + rs.getString(Constants.MEMBER_USERNAME));
+				member.setPassword(rs.getString(Constants.MEMBER_PASSWORD));
+				System.out.println("Member  dao" + rs.getString(Constants.MEMBER_PASSWORD));
+			}
+		}
+		catch(Exception e)
+		{
+			logger.error("memberDao getUsernameInformation" + e);
 		}
 		finally
 		{
