@@ -5,7 +5,10 @@
 		<title>manageIndex</title>
 	</head>
 	<body>
-		<p align=center>欢迎管理员</p>
+		<%
+			String username = (String)request.getSession().getAttribute("username");
+		%>
+		<p align=center>欢迎管理员 <%=username%></p>
 
 		<p align=center>会员列表</p>	
 		<%List<Member> member = (List<Member>)request.getSession().getAttribute("member");%>
