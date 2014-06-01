@@ -15,10 +15,7 @@
 		<table align=center borde="1">
 			<tr>
 				<th>用户名</th>
-				<th>菜品</th>
 				<th>状态</th>
-				<th>余额</th>
-				<th>注册时间</th>
 			</tr>
 			
 			<c:forEach var="member" items="${member}">
