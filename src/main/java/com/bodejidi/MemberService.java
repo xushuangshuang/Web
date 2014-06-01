@@ -1,7 +1,14 @@
 package com.bodejidi;
 
+import java.util.List;
 public class MemberService
 {
+	public List<Member> showList()
+	{
+		MemberDao memberDao = new MemberDao();
+		 List<Member> member = memberDao.showList();
+		return member;	
+	}
 	public void save(Member member, String workcode)
 	{
 		System.out.println("MemberService  " + workcode);
