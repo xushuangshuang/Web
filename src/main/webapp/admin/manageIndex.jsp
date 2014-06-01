@@ -3,6 +3,9 @@
 <html>
 	<head>
 		<title>manageIndex</title>
+		<style type="text/css">
+  			 a:link,a:visited{text-decoration:none;}
+		</style>
 	</head>
 	<body>
 		<%
