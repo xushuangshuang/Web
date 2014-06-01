@@ -13,7 +13,7 @@ public class Manage extends HttpServlet
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
 		getServletContext()
-			.getRequestDispatcher("/admin/adminManage.jsp")
+			.getRequestDispatcher("/admin/manageIndex.jsp")
 			.forward(req, resp);
 	}
 
