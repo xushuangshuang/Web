@@ -12,7 +12,7 @@ public class MemberService
 	{
 	
 		MemberDao getInformation = new MemberDao();
-		getInformation.getUsernameInformation(username);
+		Member member =	getInformation.getUsernameInformation(username);
 		return member;	
 	}
 	public Boolean loadQuery(String username, String password, String admin)
