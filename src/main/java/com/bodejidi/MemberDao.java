@@ -17,7 +17,6 @@ public class MemberDao
 	String show_user_list = "SELECT * FROM  tb_personalInformation";
 	public List<Member> showList()
 	{
-		Member member = new Member();
 		DatabaseService bs = DatabaseService.newInstance();
 		ResultSet rs = null;
 		List<Member> memberList = new ArrayList<Member>();
@@ -26,7 +25,9 @@ public class MemberDao
 			rs = bs.executeQuery(show_user_list);
 			while(rs.next())
 			{
+				Member member = new Member();
 				member.setUsername(rs.getString("username"));
+				System.out.println(member.getUsername());
 				member.setFirstName(rs.getString("firstname"));
 				member.setLastName(rs.getString("lastname"));
 				member.setPhone(rs.getString("phone"));
