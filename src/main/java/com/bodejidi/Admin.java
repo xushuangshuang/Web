@@ -51,9 +51,7 @@ public class Admin extends HttpServlet
 			HttpSession session = req.getSession();
 			System.out.println("memberList " + memberList);
 			req.getSession().setAttribute("member", memberList);
-			getServletContext()
-				.getRequestDispatcher("/admin/manageIndex.jsp")
-				.forward(req, resp);
+			resp.sendRedirect("/practice/manage");
 		}	
 	}
 }
