@@ -34,12 +34,12 @@
 					<td><input type="text" name="position"/></td>
 				</tr>
 			</table>
-		</form>
 			<table align=center>
 				<tr>	
 					<td><input type="submit" name="action" value="注册"/></td>
 				</tr>
 			</table>
+		</form>
 	</body>
 
 </html>
