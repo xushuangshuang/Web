@@ -19,7 +19,12 @@ public class DatabaseService
 	private PreparedStatement pstmt = null;
 	private Statement stmt = null;
 	private int parameterIndex;
-
+	
+	public ResultSet executeQuery(String sql) throws SQLException 
+	{
+        	logger.debug("Execute preparedStatement " + pstmt);
+       		return pstmt.executeQuery();
+    	}
 	private static Connection createConnection () throws SQLException
 	{
 		try
