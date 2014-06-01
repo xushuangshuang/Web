@@ -8,8 +8,7 @@ import java.util.ArrayList;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
-	String username_sql = "SELECT * FROM tb_personalInformation WHERE username = ? ";
-	String admin_sql = "SELECT * FROM administrator WHERE username = ? ";
+	
 
 
 	String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";
@@ -100,7 +99,7 @@ public class MemberDao
 			bs.close();
 		}
 	}
-	public Member getMemberByUsername(String username, String admin) 
+	public Member getMemberByUsername(String username, String admin, String username_sql, String admin_sql) 
 	{
 		Member member = new Member();
 		DatabaseService ds = DatabaseService.newInstance();
