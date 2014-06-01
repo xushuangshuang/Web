@@ -54,7 +54,6 @@
 				<td><input type="submit" name="action" value="登录"/></td>
 				<td><input type="hidden"  name="admin" value="admin"></td>
 			</form>
-			<td><a href="/practice/register?action=admin">注册</a></td>
 			</tr>
 		</table>
 		
