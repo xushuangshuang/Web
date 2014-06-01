@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<%
-			String username = (String)request.getSession().getAttribute("username");
+			String username = (String)request.getSession().getAttribute("adminUsername");
 		%>
 		<p align=center>欢迎管理员 <%=username%></p>
 		<p align=center><a href = "register?action=admin">添加管理员</a></p>
