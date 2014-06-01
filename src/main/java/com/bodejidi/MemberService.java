@@ -28,8 +28,10 @@ public class MemberService
 	}
 	public Boolean loadQuery(String username, String password, String admin)
 	{
+		String username_sql = "SELECT * FROM tb_personalInformation WHERE username = ? ";
+		String admin_sql = "SELECT * FROM administrator WHERE username = ? ";
 		MemberDao memberDao = new MemberDao();
-		Member member = memberDao.getMemberByUsername(username, admin);
+		Member member = memberDao.getMemberByUsername(username, admin, username_sql, admin_sql);
 		String paraUsername = member.getUsername();
 		String paraPassword = member.getPassword();
 		System.out.println(" member service  " +paraUsername);
