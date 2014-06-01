@@ -9,11 +9,6 @@ public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	
-
-
-	String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";
-
-	
 	public List<Member> showList(String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
@@ -44,7 +39,7 @@ public class MemberDao
 		}
 		return memberList;
 	}	
-	public void userSave(Member member, String workcode, String username_sql, String Information_sql)
+	public void userSave(Member member, String workcode, String username_sql, String Information_sql, String admin_register_sql)
 	{
 		String Email = member.getEmail();
 		String username = member.getUsername();
