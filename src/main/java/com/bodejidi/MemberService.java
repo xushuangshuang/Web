@@ -21,9 +21,10 @@ public class MemberService
 	}
 	public Member inquireUsername(String username)
 	{
-		String user_inquiry_username = "SELECT * FROM tb_personalInformation WHERE username = ?";	
+		String user_inquiry_username = "SELECT * FROM tb_personalInformation WHERE username = ?";
+		String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";	
 		MemberDao getInformation = new MemberDao();
-		Member member =	getInformation.getUsernameInformation(username, user_inquiry_username);
+		Member member =	getInformation.getUsernameInformation(username, user_inquiry_username, admin_register_sql);
 		return member;	
 	}
 	public Boolean loadQuery(String username, String password, String admin)
