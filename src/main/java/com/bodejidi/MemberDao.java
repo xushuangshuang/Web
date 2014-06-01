@@ -10,19 +10,19 @@ public class MemberDao
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	String username_sql = "SELECT * FROM tb_personalInformation WHERE username = ? ";
 	String admin_sql = "SELECT * FROM administrator WHERE username = ? ";
-	String tb_username_sql = "INSERT INTO tb_username (username, userEmail) VALUE(?, ?) ";
-	String tb_personalInformation_sql = "INSERT INTO tb_personalInformation (username, password, phone, firstName, lastName,  address) VALUE(?, ?, ?, ?, ?, ?)";
+
+
 	String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";
-	String user_inquiry_username = "SELECT * FROM tb_personalInformation WHERE username = ?";
-	String show_user_list = "SELECT * FROM  tb_personalInformation";
-	public List<Member> showList()
+
+	
+	public List<Member> showList(String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
 		ResultSet rs = null;
 		List<Member> memberList = new ArrayList<Member>();
 		try
 		{
-			rs = bs.executeQuery(show_user_list);
+			rs = bs.executeQuery(sql);
 			while(rs.next())
 			{
 				Member member = new Member();
@@ -45,7 +45,7 @@ public class MemberDao
 		}
 		return memberList;
 	}	
-	public void userSave(Member member, String workcode)
+	public void userSave(Member member, String workcode, String username_sql, String Information_sql)
 	{
 		String Email = member.getEmail();
 		String username = member.getUsername();
@@ -61,12 +61,12 @@ public class MemberDao
 			if(workcode == null)
 			{
 				Long phone = Long.valueOf(member.getPhone());	
-				bs.prepare(tb_username_sql)
+				bs.prepare(username_sql)
 					.setString(username)
 					.setString(Email)
 					.execute();
-				System.out.println("SQL: " + tb_username_sql );
-				bs.prepare(tb_personalInformation_sql)
+				System.out.println("SQL: " + username_sql);
+				bs.prepare(Information_sql)
 					.setString(username)
 					.setString(password)
 					.setLong(phone)
@@ -74,7 +74,7 @@ public class MemberDao
 					.setString(lastName)
 					.setString(address)
 					.execute();
-				System.out.println("SQL: " + tb_personalInformation_sql );
+				System.out.println("SQL: " + Information_sql);
 			}
 			else
 			{
@@ -135,13 +135,13 @@ public class MemberDao
 		return member;
 	}
 
-	public Member getUsernameInformation(String username)
+	public Member getUsernameInformation(String username, String inquiry_sql)
 	{
 		Member member = new Member();
 		DatabaseService ds = DatabaseService.newInstance();
 		try
 		{
-			ResultSet rs = ds.prepare(user_inquiry_username).setString(username).executeQuery();
+			ResultSet rs = ds.prepare(inquiry_sql).setString(username).executeQuery();
 			while(rs.next())
 			{
 				member.setUsername(rs.getString(Constants.MEMBER_USERNAME));
