@@ -39,7 +39,7 @@
 	<body>
 		<table align=center>
 		<h1 align=center>欢迎</h1>		
-		<form action="manage" onsubmit="return validate_form(this)" method="POST">
+		<form action="admin" onsubmit="return validate_form(this)" method="POST">
 			<tr>			
 				<td><label>用户名</label></td>
 				<td>&nbsp;</td>
