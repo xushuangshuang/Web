@@ -13,8 +13,8 @@ public class MemberDao
 	String tb_username_sql = "INSERT INTO tb_username (username, userEmail) VALUE(?, ?) ";
 	String tb_personalInformation_sql = "INSERT INTO tb_personalInformation (username, password, phone, firstName, lastName,  address) VALUE(?, ?, ?, ?, ?, ?)";
 	String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";
-	String user_inquiry_username = "SELECT FORM tb_personalInformation WHERE username = ?";
-	String show_user_list = "SELECT FORM  tb_personalInformation";
+	String user_inquiry_username = "SELECT * FROM tb_personalInformation WHERE username = ?";
+	String show_user_list = "SELECT * FROM  tb_personalInformation";
 	public List<Member> showList()
 	{
 		Member member = new Member();
