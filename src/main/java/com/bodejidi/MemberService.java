@@ -25,7 +25,7 @@ public class MemberService
 		String user_inquiry_username = "SELECT * FROM tb_personalInformation WHERE username = ?";
 			
 		MemberDao getInformation = new MemberDao();
-		Member member =	getInformation.getUsernameInformation(username, user_inquiry_username, admin_register_sql);
+		Member member =	getInformation.getUsernameInformation(username, user_inquiry_username);
 		return member;	
 	}
 	public Boolean loadQuery(String username, String password, String admin)
