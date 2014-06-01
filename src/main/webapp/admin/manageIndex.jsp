@@ -1,14 +1,14 @@
-<%@page import="com.bodejidi.Member"%>
+<%@page import="com.bodejidi.Member, java.util.List"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<head>
-		<title>manageIndex<title>
+		<title>manageIndex</title>
 	</head>
 	<body>
 		<p align=center>欢迎管理员</p>
 
 		<p align>会员列表</p>	
-		<%Member member = request.getSession().getAttribute("member")%>
+		<%List<Member> member = (List<Member>)request.getSession().getAttribute("member");%>
 		<table align=center borde="1">
 			<tr>
 				<th>用户名</th>
