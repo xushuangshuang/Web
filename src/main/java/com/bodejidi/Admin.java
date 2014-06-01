@@ -7,6 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 public class Admin extends HttpServlet
 {
@@ -34,7 +35,7 @@ public class Admin extends HttpServlet
 					HttpSession session = req.getSession();
 					req.getSession().setAttribute("username", username);
 					getServletContext()
-						.getRequestDispatcher("/admin/loadSuccess.jsp")
+						.getRequestDispatcher("/admin?action=list")
 						.forward(req, resp);
 				}
 				else
@@ -43,6 +44,15 @@ public class Admin extends HttpServlet
 						.getRequestDispatcher("/jsp/loadFailed.jsp")
 						.forward(req, resp);
 				}
+		}
+		else if("list".equals(action))
+		{
+		 	List<Member> memberList = memberService.showList();
+			HttpSession session = req.getSession();
+			req.getSession().setAttribute("member", memberList);
+			getServletContext()
+				.getRequestDispatcher("/admin/manageIndex.jsp")
+				.forward(req, resp);
 		}	
 	}
 }
