@@ -7,7 +7,7 @@
 	<body>
 		<p align=center>欢迎管理员</p>
 
-		<p align>会员列表</p>	
+		<p align=center>会员列表</p>	
 		<%List<Member> member = (List<Member>)request.getSession().getAttribute("member");%>
 		<table align=center borde="1">
 			<tr>
@@ -23,7 +23,6 @@
 				<td>
 					<a href="?action=${member.username}">${member.username}</a>
 				</td>
-        		<td>${member.firstName} ${member.lastName}</td>
       		   	</tr>
       			</c:forEach>
 		</table>
