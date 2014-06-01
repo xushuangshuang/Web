@@ -11,7 +11,7 @@
 			</form>
 
 			<table align=center>
-				<%Member memer = request.getSession().getAttribute("member")%>
+				<%Member memer = request.getSession().getAttribute("member");%>
 				<p align=center> 您查找的<%=member.getUsername%>如下</p>
 				<tr>
 					<th>username</th>
