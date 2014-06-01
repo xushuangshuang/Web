@@ -20,10 +20,16 @@ public class DatabaseService
 	private Statement stmt = null;
 	private int parameterIndex;
 	
-	public ResultSet executeQuery(String sql) throws SQLException 
+	public ResultSet executeQuery() throws SQLException 
 	{
         	logger.debug("Execute preparedStatement " + pstmt);
        		return pstmt.executeQuery();
+    	}
+	public ResultSet executeQuery(String sql) throws SQLException
+	{
+       	 	prepare(sql);
+        	logger.debug("Execute query " + sql);
+       		return executeQuery();
     	}
 	private static Connection createConnection () throws SQLException
 	{
@@ -87,11 +93,6 @@ public class DatabaseService
 		pstmt.execute();
 		logger.debug("Do sql execute  " );
 		
-	}
-	public ResultSet executeQuery() throws SQLException
-	{
-		logger.debug("Do sql executeQuery" );	
-		return pstmt.executeQuery();
 	}
 
 	public void close()
