@@ -2,6 +2,8 @@ package com.bodejidi;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ArrayList;
 
 public class MemberDao
 {
@@ -12,6 +14,36 @@ public class MemberDao
 	String tb_personalInformation_sql = "INSERT INTO tb_personalInformation (username, password, phone, firstName, lastName,  address) VALUE(?, ?, ?, ?, ?, ?)";
 	String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";
 	String user_inquiry_username = "SELECT FORM tb_personalInformation WHERE username = ?";
+	String show_user_list = "SELECT FORM  tb_personalInformation";
+	public List<Member> showList()
+	{
+		Member member = new Member();
+		DatabaseService bs = DatabaseService.newInstance();
+		ResultSet rs = null;
+		List<Member> memberList = new ArrayList<Member>();
+		try
+		{
+			rs = bs.executeQuery(show_user_list);
+			while(rs.next())
+			{
+				member.setUsername(rs.getString("username"));
+				member.setFirstName(rs.getString("firstname"));
+				member.setLastName(rs.getString("lastname"));
+				member.setPhone(rs.getString("phone"));
+				member.setAddress(rs.getString("address"));
+				memberList.add(member);
+			}
+		}
+		catch(Exception e)
+		{
+			logger.error("memberDao show list " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+		return memberList;
+	}	
 	public void userSave(Member member, String workcode)
 	{
 		String Email = member.getEmail();
