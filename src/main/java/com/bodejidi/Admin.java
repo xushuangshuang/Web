@@ -49,6 +49,7 @@ public class Admin extends HttpServlet
 		{
 		 	List<Member> memberList = memberService.showList();
 			HttpSession session = req.getSession();
+			System.out.println("memberList " + memberList);
 			req.getSession().setAttribute("member", memberList);
 			getServletContext()
 				.getRequestDispatcher("/admin/manageIndex.jsp")
