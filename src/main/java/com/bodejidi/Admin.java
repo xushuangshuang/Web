@@ -33,7 +33,7 @@ public class Admin extends HttpServlet
 				if(boo == true)
 				{
 					HttpSession session = req.getSession();
-					req.getSession().setAttribute("username", username);
+					req.getSession().setAttribute("adminUsername", username);
 					getServletContext()
 						.getRequestDispatcher("/admin?action=list")
 						.forward(req, resp);
