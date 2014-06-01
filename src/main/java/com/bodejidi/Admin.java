@@ -34,7 +34,7 @@ public class Admin extends HttpServlet
 					HttpSession session = req.getSession();
 					req.getSession().setAttribute("username", username);
 					getServletContext()
-						.getRequestDispatcher("/jsp/loadSuccess.jsp")
+						.getRequestDispatcher("/admin/loadSuccess.jsp")
 						.forward(req, resp);
 				}
 				else
