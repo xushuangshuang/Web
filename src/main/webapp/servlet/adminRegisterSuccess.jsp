@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>admin Register success</title>
-		<meta http-equiv="refresh" content="5; url=admin/manageIndex.jsp">
+		<meta http-equiv="refresh" content="5; url=/practice/manage">
 	</head>
 	<body>
 		<%
