@@ -34,14 +34,23 @@ public class Register extends HttpServlet
 		String workcode = member.getWorkcode();
 		System.out.println(action + "  " + workcode);
 		String username = member.getUsername();
-		req.getSession().setAttribute("username", username);
+		
 
-		if("注册".equals(action))
+		if(workcode != null)
 		{
 			memberService.save(member, workcode);
 			getServletContext()
 				.getRequestDispatcher("/servlet/adminRegisterSuccess.jsp")
 				.forward(req, resp);
+		}
+		else
+		{
+			req.getSession().setAttribute("username", username);	
+			memberService.save(member, workcode);
+			getServletContext()
+				.getRequestDispatcher("/servlet/registerSuccess.jsp")
+				.forward(req, resp);
+		
 		}
 	}
 
