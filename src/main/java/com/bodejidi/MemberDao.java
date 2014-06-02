@@ -22,10 +22,8 @@ public class MemberDao
 				Member member = new Member();
 				member.setUsername(rs.getString("username"));
 				System.out.println(member.getUsername());
-				member.setFirstName(rs.getString("firstname"));
-				member.setLastName(rs.getString("lastname"));
-				member.setPhone(rs.getString("phone"));
-				member.setAddress(rs.getString("address"));
+				member.setEndAccounts(rs.getString("endAccounts"));
+				member.setU_static(rs.getString("u_static"));
 				memberList.add(member);
 			}
 		}
