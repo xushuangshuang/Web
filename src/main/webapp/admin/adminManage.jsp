@@ -48,6 +48,6 @@
 				<td><label>注册时间</label></td>
 				<td><p><%=member.getRegisterDate()%></p></td>
 			</tr>
-
+		</table>
 	</body>
 </html>
