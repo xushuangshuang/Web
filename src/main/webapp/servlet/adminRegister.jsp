@@ -10,29 +10,30 @@
 		<form action="/practice/register" method="POST">
 			<table align=center>
 				<tr>
-					<td><label>username</label></td>
+					<td><label>用户名</label></td>
 					<td><input type="text" name="username"/></td>
 				</tr>
 				<tr>
-					<td><label>password</label></td>
+					<td><label>密码</label></td>
 					<td><input type="password" name="password"/></td>
 				</tr>
 				<tr>
-					<td><label>repassword</label></td>
+					<td><label>重复密码</label></td>
 					<td><input type="password" name="repassword"/></td>
 				</tr>
 				<tr>
-					<td><label>workcode</label></td>
+					<td><label>工作编号</label></td>
 					<td><input type="text" name="workcode"/></td>
 				</tr>
 				<tr>	
-					<td><label>workAddress</label></td>
+					<td><label>工作地点</label></td>
 					<td><input type="text" name="workAddress"/></td>
 				</tr>
 				<tr>	
-					<td><label>position</label></td>
+					<td><label>职位</label></td>
 					<td><input type="text" name="position"/></td>
 				</tr>
+				
 			</table>
 			<table align=center>
 				<tr>	
