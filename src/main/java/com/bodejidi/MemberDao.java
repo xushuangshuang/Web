@@ -38,8 +38,8 @@ public class MemberDao
 			ResultSet rs = bs.prepare(sql).setString(username).executeQuery();
 			while(rs.next())
 			{
-				member.setUsername(rs.getString("endAccounts"));
-				member.setPassword(rs.getString("u_static"));
+				member.setEndAccounts(rs.getString("endAccounts"));
+				member.setU_static(rs.getString("u_static"));
 			}
 		}
 		catch(Exception e)
@@ -66,7 +66,7 @@ public class MemberDao
 				member.setLastName(rs.getString("lastName"));
 				member.setPhone(rs.getString("phone"));
 				member.setAddress(rs.getString("Address"));
-				
+
 			}
 		}
 		catch(Exception e)
