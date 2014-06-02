@@ -6,7 +6,7 @@ public class MemberService
 {
 	public List<Member> showList()
 	{
-		String show_user_list = "SELECT * FROM  tb_personalInformation";
+		String show_user_list = "SELECT * FROM  tb_username_account";
 		MemberDao memberDao = new MemberDao();
 		List<Member> member = memberDao.showList(show_user_list);
 		return member;	
