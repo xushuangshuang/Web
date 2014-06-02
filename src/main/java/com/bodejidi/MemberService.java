@@ -5,13 +5,30 @@ import java.util.List;
 public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
-	public void informationByUsername(String username)
+	public Member informationByUsername(String username)
 	{
 		if(username != null)
 		{
 			Member member = new Member();
 			Member member_Information = parInformationByUsername(member, username);
+			Member member_Accounts = parUsernameAccounts(member_Information, username);
+			Member register_username = parRegisterUsername(member_Accounts, username);
+			return 	register_username;
 		}
+	}
+	public Member parRegisterUsername(Member member, String username)
+	{
+		String username_by_register = "SELECT * FROM tb_username_account WHERE username = ?";
+		MemberDao memberDao = new MemberDao();
+		Member parm = memberDao.registerByUsername(member, username, username_by_register);
+		return parm;
+	}
+	public Member parUsernameAccounts(Member member, String username)
+	{
+		String username_by_accounts = "SELECT * FROM tb_username_account WHERE username = ?";
+		MemberDao memberDao = new MemberDao();
+		Member parm = memberDao.accountsByUsername(member, username, username_by_accounts);
+		return parm;
 	}
 	public Member parInformationByUsername(Member member, String username)
 	{
