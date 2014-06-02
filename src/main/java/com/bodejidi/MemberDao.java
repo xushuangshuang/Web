@@ -8,6 +8,50 @@ import java.util.ArrayList;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	public Member registerByUsername(Member member, String username, String sql)
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+		try
+		{
+			ResultSet rs = bs.prepare(sql).setString(username).executeQuery();
+			while(rs.next())
+			{
+				member.setRegisterDate(rs.getString("registerDate"));
+				member.setRemark(rs.getString("remark"));
+			}
+		}
+		catch(Exception e)
+		{
+			logger.debug("Accounts " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+		return member;	
+	}
+	public Member accountsByUsername(Member member, String username, String sql)
+	{
+			DatabaseService bs = DatabaseService.newInstance();
+		try
+		{
+			ResultSet rs = bs.prepare(sql).setString(username).executeQuery();
+			while(rs.next())
+			{
+				member.setUsername(rs.getString("endAccounts"));
+				member.setPassword(rs.getString("u_static"));
+			}
+		}
+		catch(Exception e)
+		{
+			logger.debug("Accounts " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+		return member;	
+	}
 	public Member informationByUsername(Member member, String username, String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
