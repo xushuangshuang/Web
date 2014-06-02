@@ -17,7 +17,7 @@
 		<table align=center>
 			<tr>
 				<td><label>用户名</label></td>
-				<td><input type="text" name="username" value="<%=member.getUsername()%>"/></td>
+				<td><p><%=member.getUsername()%></p></td>
 			</tr>
 			<tr>
 				<td><label>密码</label></td>
@@ -33,19 +33,19 @@
 			</tr>
 			<tr>
 				<td><label>地址</label></td>
-				<td><input type="text" name="address" value="<%=member.getAddress()%>"/></td>
+				<td><p><%=member.getAddress()%></p></td>
 			</tr>
 			<tr>
 				<td><label>电话</label></td>
-				<td><input type="text" name="phone" value="<%=member.getPhone()%>"/></td>
+				<td><p><%=member.getPhone()%></p></td>
 			</tr>
 			<tr>
 				<td><label>卡上余额</label></td>
-				<td><input type="text" name="endAccounts" value="<%=member.getEndAccounts()%>"/></td>
+				<td><p><%=member.getEndAccounts()%></p></td>
 			</tr>
 			<tr>
 				<td><label>状态</label></td>
-				<td><input type="text" name="u_static" value="<%=member.getU_static()%>"/></td>
+				<td><p><%=member.getU_static()%></p></td>
 			</tr>
 			<tr>
 				<td><label>注册时间</label></td>
