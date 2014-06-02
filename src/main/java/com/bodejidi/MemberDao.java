@@ -39,8 +39,10 @@ public class MemberDao
 		return memberList;
 	}	
 	
-	public void parAdminSave(Member member, String admin_register_sql, String workcode, DatabaseService bs) throws SQLException
+	public void parAdminSave(Member member, String admin_register_sql, String workcode, DatabaseService bs) 
 	{
+		try
+		{
 		String username = member.getUsername();
 		String password = member.getPassword();	
 		String position = member.getPosition();
@@ -56,9 +58,20 @@ public class MemberDao
 					.setString(position)
 					.execute();
 				System.out.println("SQL: " + admin_register_sql);
+		}
+		catch(Exception e)
+		{
+			logger.error("memberDao userSave " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
 	}
-	public void parUserSave(Member member, String username_sql, String Information_sql, String tb_user_accounts, DatabaseService bs) throws SQLException
+	public void parUserSave(Member member, String username_sql, String Information_sql, String tb_user_accounts, DatabaseService bs) 
 	{
+		try
+		{
 		String username = member.getUsername();
 		String password = member.getPassword();	
 		String Email = member.getEmail();
@@ -84,6 +97,15 @@ public class MemberDao
 					.setString(username)
 					.execute();
 				System.out.println("SQL: " + tb_user_accounts);
+		}
+		catch(Exception e)
+		{
+			logger.error("memberDao userSave " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
 	}
 	public Member getMemberByUsername(String username, String admin, String username_sql, String admin_sql) 
 	{
