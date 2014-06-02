@@ -39,31 +39,7 @@ public class MemberDao
 		}
 		return memberList;
 	}	
-	public void userSave(Member member, String workcode, String username_sql, String Information_sql, String admin_register_sql, String tb_user_accounts)
-	{
-		DatabaseService bs = DatabaseService.newInstance();
-		try
-		{
-			if(workcode == null)
-			{
-				
-				parUserSave(member, username_sql, Information_sql, tb_user_accounts, bs);
-			}
-			else
-			{
-				parAdminSave(member, admin_register_sql, workcode, bs);			
-			}
-		}
-		catch(Exception e)
-		{
-			logger.error("memberDao userSave " + e);
-		
-		}
-		finally
-		{
-			bs.close();
-		}
-	}
+	
 	public void parAdminSave(Member member, String admin_register_sql, String workcode, DatabaseService bs) throws SQLException
 	{
 		String username = member.getUsername();
