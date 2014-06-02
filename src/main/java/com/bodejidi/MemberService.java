@@ -25,8 +25,6 @@ public class MemberService
 	{
 		DatabaseService bs = DatabaseService.newInstance();
 		MemberDao dao = new MemberDao();
-		try
-		{
 			if(workcode == null)
 			{
 				
@@ -36,16 +34,7 @@ public class MemberService
 			{
 				dao.parAdminSave(member, admin_register_sql, workcode, bs);			
 			}
-		}
-		catch(Exception e)
-		{
-			logger.error("memberDao userSave " + e);
-		
-		}
-		finally
-		{
-			bs.close();
-		}
+	
 	}
 	public Member inquireUsername(String username)
 	{
