@@ -15,22 +15,15 @@ public class Manage extends HttpServlet
 		getServletContext()
 			.getRequestDispatcher("/admin/manageIndex.jsp")
 			.forward(req, resp);
+		Member member = Constants.doParma(req);
+		String action = member.getAction();
+		MemberService ms = new MemberService();
+		ms.informationByUsername(action);
+		
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 	{
-		MemberService memberService = new MemberService();
-		Member memberJsp = Constants.doParma(req);
-		String action = memberJsp.getAction();
-		String username = memberJsp.getUsername();
-		System.out.println(action);
-		if("查询".equals(action))
-		{
-			Member member = memberService.inquireUsername(username);
-			req.getSession().setAttribute("member", member);
-		}
-
-		
 
 	}
 }
