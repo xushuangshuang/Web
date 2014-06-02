@@ -6,19 +6,9 @@ public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	public Member informationByUsername(String username)
-	{
-		Member member = null ;
-		if(username != null)
-		{
-			
-			Member register_username = doInformation(username);
-			member = register_username;
-		}
-		else
-		{
-			
-		}
-		return member;
+	{		
+		Member register_username = doInformation(username);
+		return register_username;
 	}
 	public Member doInformation(String username)
 	{
