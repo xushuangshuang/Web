@@ -18,6 +18,7 @@
 		<table align=center borde="1">
 			<tr>
 				<th>用户名</th>
+				<th>余额</th>
 				<th>状态</th>
 			</tr>
 			
@@ -27,6 +28,8 @@
 				<td>
 					<a href="?action=${member.username}">${member.username}</a>
 				</td>
+				<td>${member.endAccounts}</td>
+				<td>${member.u_static}</td>
       		   	</tr>
       			</c:forEach>
 		</table>
