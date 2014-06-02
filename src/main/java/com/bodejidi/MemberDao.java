@@ -72,13 +72,13 @@ public class MemberDao
 	{
 		try
 		{
-		String username = member.getUsername();
-		String password = member.getPassword();	
-		String Email = member.getEmail();
-		String firstName = member.getFirstName();
-		String lastName = member.getLastName();
-		String address = member.getAddress();
-		Long phone = Long.valueOf(member.getPhone());	
+			String username = member.getUsername();
+			String password = member.getPassword();	
+			String Email = member.getEmail();
+			String firstName = member.getFirstName();
+			String lastName = member.getLastName();
+			String address = member.getAddress();
+			Long phone = Long.valueOf(member.getPhone());	
 				bs.prepare(username_sql)
 					.setString(username)
 					.setString(Email)
