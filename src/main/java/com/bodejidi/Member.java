@@ -29,7 +29,7 @@ public class Member
 	{
 		this.endAccounts = endAccounts;
 	}
-	public String getEndAccount()
+	public String getEndAccounts()
 	{
 		return endAccounts;
 	}
