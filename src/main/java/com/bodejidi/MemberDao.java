@@ -41,26 +41,18 @@ public class MemberDao
 	}	
 	public void userSave(Member member, String workcode, String username_sql, String Information_sql, String admin_register_sql, String tb_user_accounts)
 	{
-		String Email = member.getEmail();
-		String username = member.getUsername();
-		String password = member.getPassword();
-		String firstName = member.getFirstName();
-		String lastName = member.getLastName();
-		String position = member.getPosition();
-		String workAddress = member.getWorkAddress(); 
-		String address = member.getAddress();
-		
 		DatabaseService bs = DatabaseService.newInstance();
 		try
 		{
 			if(workcode == null)
 			{
 				
-				parUserSave(member, username_sql, Information_sql, tb_user_accounts);
+				parUserSave(member, username_sql, Information_sql, tb_user_accounts, bs);
 			}
 			else
 			{
-				parAdminSave(member, admin_register_sql, workcode );			}
+				parAdminSave(member, admin_register_sql, workcode, bs);			
+			}
 		}
 		catch(Exception e)
 		{
@@ -72,9 +64,8 @@ public class MemberDao
 			bs.close();
 		}
 	}
-	public void parAdminSave(Member member, String admin_register_sql, String workcode ) throws SQLException
+	public void parAdminSave(Member member, String admin_register_sql, String workcode, DatabaseService bs) throws SQLException
 	{
-		DatabaseService bs = DatabaseService.newInstance();
 		String username = member.getUsername();
 		String password = member.getPassword();
 		String position = member.getPosition();
@@ -91,9 +82,8 @@ public class MemberDao
 					.execute();
 				System.out.println("SQL: " + admin_register_sql);
 	}
-	public void parUserSave(Member member, String username_sql, String Information_sql, String tb_user_accounts) throws SQLException
+	public void parUserSave(Member member, String username_sql, String Information_sql, String tb_user_accounts, DatabaseService bs) throws SQLException
 	{
-		DatabaseService bs = DatabaseService.newInstance();
 		String Email = member.getEmail();
 		String username = member.getUsername();
 		String password = member.getPassword();
