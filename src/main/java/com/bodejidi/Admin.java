@@ -7,7 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import javax.servlet.http.HttpSession;
-import java.util.List;
+
 
 public class Admin extends HttpServlet
 {
@@ -34,9 +34,7 @@ public class Admin extends HttpServlet
 				{
 					HttpSession session = req.getSession();
 					req.getSession().setAttribute("adminUsername", username);
-					getServletContext()
-						.getRequestDispatcher("/admin?action=list")
-						.forward(req, resp);
+					resp.sendRedirect("/practice/manage");
 				}
 				else
 				{
@@ -45,13 +43,5 @@ public class Admin extends HttpServlet
 						.forward(req, resp);
 				}
 		}
-		else if("list".equals(action))
-		{
-		 	List<Member> memberList = memberService.showList();
-			HttpSession session = req.getSession();
-			System.out.println("memberList " + memberList);
-			req.getSession().setAttribute("member", memberList);
-			resp.sendRedirect("/practice/manage");
-		}	
 	}
 }
