@@ -30,5 +30,7 @@ public class Manage extends HttpServlet
 			req.getSession().setAttribute("member", member);
 		}
 
+		
+
 	}
 }
