@@ -21,6 +21,10 @@
 				<td><p><%=member.getPassword()%></p></td>
 			</tr>
 			<tr>
+				<td><label>Email</label></td>
+				<td><p><%=member.getEmail()%></p></td>
+			</tr>
+			<tr>
 				<td><label>真实姓名</label></td>
 				<td><p><%=member.getFirstName()%> <%=member.getLastName()%></p></td>
 			</tr>
