@@ -8,6 +8,33 @@ import java.util.ArrayList;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	public Member informationByUsername(Member member, String username, String sql)
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+		try
+		{
+			ResultSet rs = bs.prepare(sql).setString(username).executeQuery();
+			while(rs.next())
+			{
+				member.setUsername(rs.getString("username"));
+				member.setPassword(rs.getString("password"));
+				member.setFirstName(rs.getString("firstName"));
+				member.setLastName(rs.getString("lastName"));
+				member.setPhone(rs.getString("phone"));
+				member.setAddress(rs.getString("Address"));
+				
+			}
+		}
+		catch(Exception e)
+		{
+			logger.debug("Information " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+		return member;	
+	}
 	public List<Member> showList(String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
