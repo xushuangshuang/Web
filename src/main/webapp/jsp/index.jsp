@@ -6,8 +6,16 @@
 		</style>
 	</head>
 	<body>
+		
+		<h1 align=center>欢迎</h1>
+		</br>
+
 		<table align=center>
-		<h1 align=center>欢迎</h1>		
+			<th><a onclick="javascript:history.back(-1);" >返回</a></th>
+		</table>
+		</br>
+
+		<table align=center>		
 		<form action="practice" method="POST">
 		<tr>			
 			<th><label>用户名</label></th>
