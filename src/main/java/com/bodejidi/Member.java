@@ -14,7 +14,25 @@ public class Member
 	private String workcode;
 	private String workAddress;
 	private String position;
+	private String endAccounts;
+	private String u_static;
 
+	public void setU_static(String u_static)
+	{
+		this.u_static = u_static;
+	}
+	public String getU_static()
+	{
+		return u_static;
+	}
+	public void setEndAccounts(String endAccounts)
+	{
+		this.endAccounts = endAccounts;
+	}
+	public String getEndAccount()
+	{
+		return endAccounts;
+	}
 	public void setWorkcode(String workcode)
 	{
 		this.workcode = workcode;
