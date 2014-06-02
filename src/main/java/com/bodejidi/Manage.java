@@ -7,11 +7,17 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.RequestDispatcher;
+import java.util.List;
 
 public class Manage extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
+		MemberService memberService = new MemberService();
+		List<Member> memberList = memberService.showList();
+		HttpSession session = req.getSession();
+		System.out.println("memberList " + memberList);
+		req.getSession().setAttribute("member", memberList);
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
 		if(action != null)
