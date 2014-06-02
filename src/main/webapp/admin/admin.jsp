@@ -38,7 +38,7 @@
 	</head>
 	<body>
 		<table align=center>
-		<h1 align=center>欢迎</h1>		
+		<h1 align=center>欢迎管理员</h1>		
 		<form action="admin" onsubmit="return validate_form(this)" method="POST">
 			<tr>			
 				<td><label>用户名</label></td>
