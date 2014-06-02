@@ -7,14 +7,27 @@ public class MemberService
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	public Member informationByUsername(String username)
 	{
+		Member member = null ;
 		if(username != null)
 		{
-			Member member = new Member();
-			Member member_Information = parInformationByUsername(member, username);
-			Member member_Accounts = parUsernameAccounts(member_Information, username);
-			Member register_username = parRegisterUsername(member_Accounts, username);
-			return 	register_username;
+			
+			Member register_username = doInformation(username);
+			member = register_username;
 		}
+		else
+		{
+			
+		}
+		return member;
+	}
+	public Member doInformation(String username)
+	{
+		Member member = new Member();
+		Member member_Information = parInformationByUsername(member, username);
+		Member member_Accounts = parUsernameAccounts(member_Information, username);
+		Member register_username = parRegisterUsername(member_Accounts, username);
+		return 	register_username;
+		
 	}
 	public Member parRegisterUsername(Member member, String username)
 	{
