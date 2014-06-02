@@ -5,10 +5,10 @@
 		<%
 			Member member = (Member)request.getSession().getAttribute("informationList");
 		%>
-		<title>username</title>
+		<title><%=member.getUsername()%></title>
 	</head>
 	<body>	
-		<p align=center><%=member.getUsername()%></p>
+		<p align=center>关于 <%=member.getUsername()%> 的详细个人信息</p>
 		</br>
 		</br>
 		<table align=center>
