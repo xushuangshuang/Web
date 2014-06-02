@@ -7,6 +7,11 @@
 	</head>
 	<body>
 		<h1 align=center>注册</h1>
+		</br>
+		<table align=center>
+			<th><a onclick="javascript:history.back(-1);" >返回</a></th>
+		</table>
+		</br>
 		<form action="/practice/register" method="POST">
 			<table align=center>
 				<tr>
