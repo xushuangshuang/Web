@@ -20,6 +20,7 @@
 				<th>用户名</th>
 				<th>余额</th>
 				<th>状态</th>
+				<th>备注:</th>
 			</tr>
 			
 			<c:forEach var="member" items="${member}">
