@@ -11,7 +11,9 @@ public class Constants extends HttpServlet
 	public static final String MEMBER_LASTNAME = "lastName";
 	public static final String MEMBER_PHONE = "phone";
 	public static final String MEMBER_ADDRESS = "address";
-
+	public static final String MEMBER_ENDACCOUNTS = "endAccounts";
+	public static final String MEMBER_U_STATIC = "u_static";
+	
 	public static Member doParma(HttpServletRequest req)
 	{
 		Member member = new Member();
@@ -39,6 +41,10 @@ public class Constants extends HttpServlet
 		member.setWorkAddress(workAddress);
 		String position = req.getParameter("position");
 		member.setPosition(position);
+		String endAccounts = req.getParameter("endAccounts");
+		member.setEndAccounts(endAccounts);
+		String u_static = req.getParameter("u_static");
+		member.setU_static(u_static);
 		return member;
 	}
 }
