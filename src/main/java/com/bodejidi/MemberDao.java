@@ -23,7 +23,9 @@ public class MemberDao
 				member.setUsername(rs.getString("username"));
 				System.out.println(member.getUsername());
 				member.setEndAccounts(rs.getString("endAccounts"));
+				System.out.println(member.getEndAccounts());
 				member.setU_static(rs.getString("u_static"));
+				System.out.println(member.getU_static());
 				memberList.add(member);
 			}
 		}
@@ -37,7 +39,7 @@ public class MemberDao
 		}
 		return memberList;
 	}	
-	public void userSave(Member member, String workcode, String username_sql, String Information_sql, String admin_register_sql)
+	public void userSave(Member member, String workcode, String username_sql, String Information_sql, String admin_register_sql, String tb_user_accounts)
 	{
 		String Email = member.getEmail();
 		String username = member.getUsername();
@@ -67,6 +69,10 @@ public class MemberDao
 					.setString(address)
 					.execute();
 				System.out.println("SQL: " + Information_sql);
+				bs.prepare(tb_user_accounts)
+					.setString(username)
+					.execute();
+				System.out.println("SQL: " + tb_user_accounts);
 			}
 			else
 			{
