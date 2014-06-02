@@ -18,8 +18,8 @@ public class Manage extends HttpServlet
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
 		MemberService ms = new MemberService();
-		ms.informationByUsername(action);
-		
+		Member parm_member = ms.informationByUsername(action);
+		req.getSession().setAttribute("informationList", parm_member);
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
