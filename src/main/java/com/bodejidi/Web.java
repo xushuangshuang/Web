@@ -13,10 +13,19 @@ public class Web extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException
 	{
-		getServletContext()
-			.getRequestDispatcher("/jsp/index.jsp")
-			.forward(req, resp);
-	
+		String par = (String)req.getSession().getAttribute("username"); 
+		if(par == null)
+		{
+			getServletContext()
+				.getRequestDispatcher("/jsp/index.jsp")
+				.forward(req, resp);
+		}
+		else
+		{
+			getServletContext()
+				.getRequestDispatcher("/error/errorLoad.jsp")
+				.forward(req, resp);
+		}
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
