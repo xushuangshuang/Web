@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
-	
 	public List<Member> showList(String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
@@ -43,7 +42,7 @@ public class MemberDao
 	public void parAdminSave(Member member, String admin_register_sql, String workcode, DatabaseService bs) throws SQLException
 	{
 		String username = member.getUsername();
-		String password = member.getPassword();
+		String password = member.getPassword();	
 		String position = member.getPosition();
 		String workAddress = member.getWorkAddress(); 
 		String address = member.getAddress();
@@ -60,13 +59,11 @@ public class MemberDao
 	}
 	public void parUserSave(Member member, String username_sql, String Information_sql, String tb_user_accounts, DatabaseService bs) throws SQLException
 	{
-		String Email = member.getEmail();
 		String username = member.getUsername();
-		String password = member.getPassword();
+		String password = member.getPassword();	
+		String Email = member.getEmail();
 		String firstName = member.getFirstName();
 		String lastName = member.getLastName();
-		String position = member.getPosition();
-		String workAddress = member.getWorkAddress(); 
 		String address = member.getAddress();
 		Long phone = Long.valueOf(member.getPhone());	
 				bs.prepare(username_sql)
