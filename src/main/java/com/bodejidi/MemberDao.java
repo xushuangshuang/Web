@@ -49,12 +49,60 @@ public class MemberDao
 		String position = member.getPosition();
 		String workAddress = member.getWorkAddress(); 
 		String address = member.getAddress();
+		
 		DatabaseService bs = DatabaseService.newInstance();
 		try
 		{
 			if(workcode == null)
 			{
-				Long phone = Long.valueOf(member.getPhone());	
+				
+				parUserSave(member, username_sql, Information_sql, tb_user_accounts);
+			}
+			else
+			{
+				parAdminSave(member, admin_register_sql, workcode );			}
+		}
+		catch(Exception e)
+		{
+			logger.error("memberDao userSave " + e);
+		
+		}
+		finally
+		{
+			bs.close();
+		}
+	}
+	public void parAdminSave(Member member, String admin_register_sql, String workcode ) throws SQLException
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+		String username = member.getUsername();
+		String password = member.getPassword();
+		String position = member.getPosition();
+		String workAddress = member.getWorkAddress(); 
+		String address = member.getAddress();
+		Long code = Long.valueOf(workcode);
+				bs.prepare(admin_register_sql)
+					.setString(username)
+					.setString(password)
+					.setLong(code)
+					.setDate()
+					.setString(workAddress)
+					.setString(position)
+					.execute();
+				System.out.println("SQL: " + admin_register_sql);
+	}
+	public void parUserSave(Member member, String username_sql, String Information_sql, String tb_user_accounts) throws SQLException
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+		String Email = member.getEmail();
+		String username = member.getUsername();
+		String password = member.getPassword();
+		String firstName = member.getFirstName();
+		String lastName = member.getLastName();
+		String position = member.getPosition();
+		String workAddress = member.getWorkAddress(); 
+		String address = member.getAddress();
+		Long phone = Long.valueOf(member.getPhone());	
 				bs.prepare(username_sql)
 					.setString(username)
 					.setString(Email)
@@ -73,30 +121,6 @@ public class MemberDao
 					.setString(username)
 					.execute();
 				System.out.println("SQL: " + tb_user_accounts);
-			}
-			else
-			{
-				Long code = Long.valueOf(workcode);
-				bs.prepare(admin_register_sql)
-					.setString(username)
-					.setString(password)
-					.setLong(code)
-					.setDate()
-					.setString(workAddress)
-					.setString(position)
-					.execute();
-				System.out.println("SQL: " + admin_register_sql);
-			}
-		}
-		catch(Exception e)
-		{
-			logger.error("memberDao userSave " + e);
-		
-		}
-		finally
-		{
-			bs.close();
-		}
 	}
 	public Member getMemberByUsername(String username, String admin, String username_sql, String admin_sql) 
 	{
