@@ -9,9 +9,16 @@ public class MemberService
 	{
 		if(username != null)
 		{
-			
+			Member member = new Member();
+			Member member_Information = parInformationByUsername(member, username);
 		}
-	
+	}
+	public Member parInformationByUsername(Member member, String username)
+	{
+		String Information_by_username = "SELECT * FROM tb_personalInformation WHERE username = ?";
+		MemberDao memberDao = new MemberDao();
+		Member parm = memberDao.informationByUsername(member, username, Information_by_username);
+		return parm;
 	}
 	public List<Member> showList()
 	{
