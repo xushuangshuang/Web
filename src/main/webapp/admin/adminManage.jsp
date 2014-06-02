@@ -10,7 +10,9 @@
 	<body>	
 		<p align=center>关于 <%=member.getUsername()%> 的详细个人信息</p>
 		</br>
-		<a onclick="javascript:history.back(-1);" >返回</a>
+		<table align=center>
+			<th><a onclick="javascript:history.back(-1);" >返回</a></th>
+		</table>
 		</br>
 		<table align=center>
 			<tr>
