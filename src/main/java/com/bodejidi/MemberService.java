@@ -5,6 +5,14 @@ import java.util.List;
 public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	public void informationByUsername(String username)
+	{
+		if(username != null)
+		{
+			
+		}
+	
+	}
 	public List<Member> showList()
 	{
 		String show_user_list = "SELECT * FROM  tb_username_account";
