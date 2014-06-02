@@ -12,14 +12,24 @@ public class Manage extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
-		getServletContext()
-			.getRequestDispatcher("/admin/manageIndex.jsp")
-			.forward(req, resp);
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
-		MemberService ms = new MemberService();
-		Member parm_member = ms.informationByUsername(action);
-		req.getSession().setAttribute("informationList", parm_member);
+		if(action != null)
+		{
+			MemberService ms = new MemberService();
+			Member parm_member = ms.informationByUsername(action);
+			req.getSession().setAttribute("informationList", parm_member);
+			getServletContext()
+				.getRequestDispatcher("/admin/adminManage.jsp")
+				.forward(req, resp);
+		}
+		else
+		{
+			getServletContext()
+				.getRequestDispatcher("/admin/manageIndex.jsp")
+				.forward(req, resp);
+		
+		}
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
