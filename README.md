@@ -2,5 +2,7 @@
 
 请将sql包下的.sql文件，导入到MYSQL数据库中
 
-执行请直接运行dispose.sh 文件即可
+执行用户端请直接运行dispose.sh 文件即可
+
+执行管理员端直接运行admin_dispose.sh 文件即可
 
