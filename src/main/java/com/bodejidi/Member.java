@@ -17,7 +17,16 @@ public class Member
 	private String endAccounts;
 	private String u_static;
 	private String registerDate;
+	private String remark;
 
+	public void setRemark(String remark)
+	{
+		this.remark = remark;
+	}
+	public String getRemark()
+	{
+		return remark;
+	}
 	public void setRegisterDate(String registerDate)
 	{
 		this.registerDate = registerDate;
