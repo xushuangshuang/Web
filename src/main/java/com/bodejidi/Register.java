@@ -21,9 +21,20 @@ public class Register extends HttpServlet
 		}
 		else
 		{
-			getServletContext()
-				.getRequestDispatcher("/servlet/register.jsp")
-				.forward(req, resp);
+			String par = (String)req.getSession().getAttribute("username"); 
+			if(par == null)
+			{
+				getServletContext()
+					.getRequestDispatcher("/servlet/register.jsp")
+					.forward(req, resp);
+			}
+			else
+			{
+				getServletContext()
+					.getRequestDispatcher("/error/errorRegister.jsp")
+					.forward(req, resp);
+			}
+
 		}
 	}
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
@@ -45,12 +56,11 @@ public class Register extends HttpServlet
 		}
 		else
 		{
-			req.getSession().setAttribute("username", username);	
-			memberService.save(member, workcode);
-			getServletContext()
-				.getRequestDispatcher("/servlet/registerSuccess.jsp")
-				.forward(req, resp);
-		
+				req.getSession().setAttribute("username", username);	
+				memberService.save(member, workcode);
+				getServletContext()
+					.getRequestDispatcher("/servlet/registerSuccess.jsp")
+					.forward(req, resp);
 		}
 	}
 
