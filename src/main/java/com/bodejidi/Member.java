@@ -16,7 +16,16 @@ public class Member
 	private String position;
 	private String endAccounts;
 	private String u_static;
+	private String registerDate;
 
+	public void setRegisterDate(String registerDate)
+	{
+		this.registerDate = registerDate;
+	}
+	public String getRegisterDate()
+	{
+		return registerDate;
+	}
 	public void setU_static(String u_static)
 	{
 		this.u_static = u_static;
