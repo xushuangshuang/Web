@@ -8,6 +8,30 @@ import java.util.ArrayList;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	public Member paymentByUsername(Member member, String username, String sql)
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+		try
+		{
+			ResultSet rs = bs.prepare(sql).setString(username).executeQuery();
+			while(rs.next())
+			{
+				member.setVIP(rs.getString("VIP"));
+				member.setAccountsed(rs.getString("accounted"));
+				member.setPaymentDate(rs.getString("paymentDate"));
+				member.setPayment(rs.getString("payment"));
+			}
+		}
+		catch(Exception e)
+		{
+			logger.debug("Payment  " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+		return member;	
+	}
 	public Member registerByUsername(Member member, String username, String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
