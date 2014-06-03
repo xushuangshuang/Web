@@ -5,6 +5,12 @@ import java.util.List;
 public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	public void payment(Member member)
+	{
+		String tb_use_payment = "INSERT INTO tb_username (username, payment, VIP, paymentDate) VALUE(?, ?, ?, ?) ";
+		MemberDao dao = new MemberDao();
+		dao.paymentSave(member, tb_use_payment);	
+	}
 	public Member informationByUsername(String username)
 	{		
 		Member register_username = doInformation(username);
@@ -50,7 +56,7 @@ public class MemberService
 	}
 	public List<Member> showList()
 	{
-		String show_user_list = "SELECT * FROM  tb_username_account";
+		String show_user_list = "SELECT * FROM  tb_username_account , tb_user_payment WHERE tb_username_account.username = tb_user_payment.username";
 		MemberDao memberDao = new MemberDao();
 		List<Member> member = memberDao.showList(show_user_list);
 		return member;	
