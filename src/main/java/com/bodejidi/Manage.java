@@ -65,7 +65,7 @@ public class Manage extends HttpServlet
 		{
 			System.out.println(" Manage " + payment);
 			getServletContext()
-				.getRequestDispatcher("/error/operator.jsp")
+				.getRequestDispatcher("/error/operate.jsp")
 				.forward(req, resp);
 		}
 	}
