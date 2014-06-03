@@ -7,9 +7,21 @@ public class MemberService
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	public void usernameAccount(Member member)
 	{
+		String par = putEndAccounts(member);
+		long payment = Util.number(par);
+		long parPayment = Util.number(member.getPayment());
+		long parPa = payment + parPayment;
+		member.setPayment(String.valueOf(parPa));
 		String tb_use_account = "UPDATE tb_username_account SET endAccounts = ? WHERE username = ?";
 		MemberDao dao = new MemberDao();
 		dao.endAccountsUpdate(member, tb_use_account);
+	}
+	public String putEndAccounts(Member member)
+	{
+		String put_endAccounts_sql = "SELECT endAccounts FROM tb_username_account WHERE username = ?";
+		MemberDao dao = new MemberDao();
+		String parPayment = dao.endAccountsPut(member, put_endAccounts_sql);
+		return parPayment;
 	}
 	public void payment(Member member)
 	{
