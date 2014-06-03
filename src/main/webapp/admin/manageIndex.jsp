@@ -12,7 +12,7 @@
 			String username = (String)request.getSession().getAttribute("adminUsername");
 		%>
 		<p align=center>欢迎管理员 <%=username%></p>
-		<p align=center><a href = "register?action=admin">添加管理员</a></p>
+		<p align=center><a href = "register?action=admin">添加管理员</a></p>;
 		<p align=center>会员列表</p>	
 		<%List<Member> member = (List<Member>)request.getSession().getAttribute("member");%>
 		<table align=center borde="1">
