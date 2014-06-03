@@ -8,10 +8,34 @@ import java.util.ArrayList;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	public String endAccountsPut(Member member, String sql)
+	{
+		String par = null ;
+		DatabaseService bs = DatabaseService.newInstance();
+		try
+		{
+			String username = member.getUsername();
+			System.out.println(" paymentSave " + username);
+			ResultSet rs = bs.prepare(sql).setString(username).executeQuery();
+			System.out.println("SQL: " + sql);
+			rs.next();
+			String payment = rs.getString("endAccounts");
+			par = payment;
+		}
+		catch(Exception e)
+		{
+			logger.debug("Payment by username " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+		return par;
+	}
 	public void endAccountsUpdate(Member member, String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
-			try
+		try
 		{
 			String username = member.getUsername();
 			System.out.println(" paymentSave " + username);
@@ -35,7 +59,7 @@ public class MemberDao
 	public void paymentSave(Member member, String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
-			try
+		try
 		{
 			String username = member.getUsername();
 			System.out.println(" paymentSave " + username);
