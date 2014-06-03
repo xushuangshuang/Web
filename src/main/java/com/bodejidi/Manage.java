@@ -20,7 +20,7 @@ public class Manage extends HttpServlet
 		req.getSession().setAttribute("member", memberList);
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
-		System.out.println(action);
+		System.out.println("Manage " + action);
 		String number = member.getNumber();
 		if(action != null)
 		{
