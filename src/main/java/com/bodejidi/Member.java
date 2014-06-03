@@ -20,7 +20,25 @@ public class Member
 	private String remark;
 	private String accountsed;
 	private String payment;
-
+	private String VIP;
+	private String number;
+	
+	public void setNumber(String number)
+	{
+		this.number = number;
+	}
+	public String getNumber()
+	{
+		return number;
+	}
+	public void setVIP(String VIP)
+	{
+		this.VIP = VIP;
+	}
+	public String getVIP()
+	{
+		return VIP;
+	}
 	public void setAccountsed(String accountsed)
 	{
 		this.accountsed = accountsed;
@@ -28,7 +46,8 @@ public class Member
 	public String getAccountsed()
 	{
 		return accountsed;
-	}public void setPayment(String payment)
+	}
+	public void setPayment(String payment)
 	{
 		this.payment = payment;
 	}
