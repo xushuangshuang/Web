@@ -22,7 +22,16 @@ public class Member
 	private String payment;
 	private String VIP;
 	private String number;
+	private String paymentDate;
 	
+	public void setPaymentDate(String paymentDate)
+	{
+		this.paymentDate = paymentDate;
+	}
+	public String getPaymentDate()
+	{
+		return paymentDate;
+	}
 	public void setNumber(String number)
 	{
 		this.number = number;
