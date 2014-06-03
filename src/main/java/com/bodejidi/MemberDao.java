@@ -14,6 +14,7 @@ public class MemberDao
 			try
 		{
 			String username = member.getUsername();
+			System.out.println(" paymentSave " + username);
 			String payment = member.getPayment();
 			String VIP = "Y";
 
