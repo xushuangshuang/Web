@@ -35,10 +35,14 @@
 				<td><label>状态</label></td>
 				<td><p><%=member.getU_static()%></p></td>
 			</tr>
+			<tr>
+				<td><label>上次缴费时间</label></td>
+				<td><p><%=member.getPaymentDate()%></p></td>
+			</tr>
 			<form align=center action="Manage" method="POST">
 				<tr>			
 					<td><label>缴纳金额</label></td>
-					<td>&nbsp;</td>
+					
 					<td><input type="text" name="payment"/></td>
 				</tr>
 					<td><input type="submit" name="action" value="缴费"/></td>
