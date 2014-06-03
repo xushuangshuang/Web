@@ -470,6 +470,8 @@
 		<td><a href="?action=logout">注销</a></td>
 		<td>&nbsp;</td>
 		<td><a href="/practice/register">注册</a><br/></td>
+		<td>&nbsp;</td>
+		<td><a href="/practice/personal">个人信息管理</a><br/></td>
 		<td>&nbsp;</td>	
 		</table> 	
 	    </div>
