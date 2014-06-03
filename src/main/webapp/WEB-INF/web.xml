@@ -78,5 +78,13 @@
   	<servlet-mapping>
 	  	<servlet-name>admin</servlet-name>
 	  	<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  	<servlet-name>personal</servlet-name>
+	  	<servlet-class>com.bodejidi.Personal</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+	  	<servlet-name>personal</servlet-name>
+	  	<url-pattern>/personal</url-pattern>
   	</servlet-mapping>
 </web-app>
