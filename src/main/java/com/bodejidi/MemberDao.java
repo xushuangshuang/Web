@@ -224,6 +224,7 @@ public class MemberDao
 				System.out.println("SQL: " + Information_sql);
 				bs.prepare(tb_user_accounts)
 					.setString(username)
+					.setSting("0")
 					.execute();
 				System.out.println("SQL: " + tb_user_accounts);
 		}
