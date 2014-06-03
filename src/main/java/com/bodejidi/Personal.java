@@ -15,6 +15,9 @@ public class Personal extends HttpServlet
 		String username = (String)req.getSession().getAttribute("username");
 		if(username != null)
 		{
+			MemberService ms = new MemberService();
+			Member parMember = ms.doInformation(username);
+			req.getSession().setAttribute("personal", parMember);
 			getServletContext()
 				.getRequestDispatcher("/jsp/personal.jsp")
 				.forward(req, resp);
