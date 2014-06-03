@@ -53,20 +53,20 @@ public class Manage extends HttpServlet
 	{
 		Member member = Constants.doParma(req);
 		String payment = member.getPayment(); 
-		if(null == payment)
-		{
-			System.out.println(" Manage " + payment);
-			getServletContext()
-				.getRequestDispatcher("/error/operator.jsp")
-				.forward(req, resp);	
-		}
-		else
+		if(Util.isNumeric(payment))
 		{
 			System.out.println(" Manage  else" + payment);
 			MemberService ms = new MemberService();
 			ms.usernameAccount(member);	
 			ms.payment(member);
 			resp.sendRedirect("/practice/manage");
+		}
+		else
+		{
+			System.out.println(" Manage " + payment);
+			getServletContext()
+				.getRequestDispatcher("/error/operator.jsp")
+				.forward(req, resp);
 		}
 	}
 	
