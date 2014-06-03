@@ -63,21 +63,21 @@ public class MemberService
 	}
 	public void save(Member member, String workcode)
 	{
-		String tb_username_sql = "INSERT INTO tb_username (username, userEmail) VALUE(?, ?) ";
+		String tb_username_sql = "INSERT INTO tb_username (username, userEmail, registerDate) VALUE(?, ?, ?) ";
 		String tb_personalInformation_sql = "INSERT INTO tb_personalInformation (username, password, phone, firstName, lastName,  address) VALUE(?, ?, ?, ?, ?, ?)";
 		String admin_register_sql = "INSERT INTO administrator (username, password, workcode, loginDate, workAddress, position) VALUE(?, ?, ?, ?, ?, ?)";
 		String tb_user_accounts = "INSERT INTO tb_username_account (username) VALUE(?)";
+		String tb_user_payment = "INSERT INTO tb_user_payment (username) VALUE (?)";
 		System.out.println("MemberService  " + workcode);
-		userSave(member, workcode, tb_username_sql, tb_personalInformation_sql, admin_register_sql, tb_user_accounts);
+		userSave(member, workcode, tb_username_sql, tb_personalInformation_sql, admin_register_sql, tb_user_accounts, tb_user_payment);
 	}
-	public void userSave(Member member, String workcode, String username_sql, String Information_sql, String admin_register_sql, String tb_user_accounts)
+	public void userSave(Member member, String workcode, String username_sql, String Information_sql, String admin_register_sql, String tb_user_accounts, String tb_user_payment)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
 		MemberDao dao = new MemberDao();
 			if(workcode == null)
 			{
-				
-				dao.parUserSave(member, username_sql, Information_sql, tb_user_accounts, bs);
+				dao.parUserSave(member, username_sql, Information_sql, tb_user_accounts, bs, tb_user_payment);
 			}
 			else
 			{
