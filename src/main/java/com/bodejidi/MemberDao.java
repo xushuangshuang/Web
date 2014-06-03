@@ -45,7 +45,6 @@ public class MemberDao
 				member.setVIP(rs.getString("VIP"));
 				member.setAccountsed(rs.getString("accounted"));
 				member.setPaymentDate(rs.getString("paymentDate"));
-				member.setPayment(rs.getString("payment"));
 			}
 		}
 		catch(Exception e)
@@ -68,6 +67,8 @@ public class MemberDao
 			{
 				member.setRegisterDate(rs.getString("registerDate"));
 				member.setRemark(rs.getString("remark"));
+				member.setEmail(rs.getString("userEmail"));
+
 			}
 		}
 		catch(Exception e)
@@ -115,13 +116,12 @@ public class MemberDao
 				member.setFirstName(rs.getString("firstName"));
 				member.setLastName(rs.getString("lastName"));
 				member.setPhone(rs.getString("phone"));
-				member.setAddress(rs.getString("Address"));
-
+				member.setAddress(rs.getString("address"));
 			}
 		}
 		catch(Exception e)
 		{
-			logger.debug("Information " + e);
+			logger.debug(" Information  " + e);
 		}
 		finally
 		{
