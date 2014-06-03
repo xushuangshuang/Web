@@ -192,7 +192,7 @@ public class MemberDao
 			bs.close();
 		}
 	}
-	public void parUserSave(Member member, String username_sql, String Information_sql, String tb_user_accounts, DatabaseService bs) 
+	public void parUserSave(Member member, String username_sql, String Information_sql, String tb_user_accounts, DatabaseService bs, String tb_user_payment) 
 	{
 		try
 		{
@@ -203,9 +203,14 @@ public class MemberDao
 			String lastName = member.getLastName();
 			String address = member.getAddress();
 			Long phone = Long.valueOf(member.getPhone());	
+				bs.prepare(tb_user_payment)
+					.setString(username)
+					.execute();
+				System.out.println("SQL: " +tb_user_payment);
 				bs.prepare(username_sql)
 					.setString(username)
 					.setString(Email)
+					.setDate()
 					.execute();
 				System.out.println("SQL: " + username_sql);
 				bs.prepare(Information_sql)
