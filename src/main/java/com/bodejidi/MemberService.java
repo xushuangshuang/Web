@@ -7,7 +7,7 @@ public class MemberService
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	public void payment(Member member)
 	{
-		String tb_use_payment = "INSERT INTO tb_username (username, payment, VIP, paymentDate) VALUE(?, ?, ?, ?) ";
+		String tb_use_payment = "INSERT INTO tb_user_payment (username, payment, VIP, paymentDate) VALUE(?, ?, ?, ?) ";
 		MemberDao dao = new MemberDao();
 		dao.paymentSave(member, tb_use_payment);	
 	}
@@ -35,7 +35,7 @@ public class MemberService
 	}
 	public Member parRegisterUsername(Member member, String username)
 	{
-		String username_by_register = "SELECT * FROM tb_username_account WHERE username = ?";
+		String username_by_register = "SELECT * FROM tb_username WHERE username = ?";
 		MemberDao memberDao = new MemberDao();
 		Member parm = memberDao.registerByUsername(member, username, username_by_register);
 		return parm;
@@ -49,7 +49,7 @@ public class MemberService
 	}
 	public Member parInformationByUsername(Member member, String username)
 	{
-		String Information_by_username = "SELECT * FROM tb_personalInformation WHERE username = ?";
+		String Information_by_username = "SELECT * FROM tb_personalInformation where username = ?";
 		MemberDao memberDao = new MemberDao();
 		Member parm = memberDao.informationByUsername(member, username, Information_by_username);
 		return parm;
