@@ -29,7 +29,8 @@
 				<td>
 					<a href="?action=${member.username}">${member.username}</a>
 				</td>
-				<td>${member.endAccounts}</td>
+				<td>
+					<a href="?action=${member.endAccounts}">${member.endAccounts}</td></a>
 				<td>${member.u_static}</td>
       		   	</tr>
       			</c:forEach>
