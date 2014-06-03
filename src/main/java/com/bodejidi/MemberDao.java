@@ -8,6 +8,32 @@ import java.util.ArrayList;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	public void paymentSave(Member member, String sql)
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+			try
+		{
+			String username = member.getUsername();
+			String payment = member.getPayment();
+			String VIP = "Y";
+
+				bs.prepare(sql)
+					.setString(username)
+					.setString(payment)
+					.setString(VIP)
+					.setDate()
+					.execute();
+				System.out.println("SQL: " + sql);
+		}
+		catch(Exception e)
+		{
+			logger.debug("Payment by username " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+	}
 	public Member paymentByUsername(Member member, String username, String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
@@ -24,7 +50,7 @@ public class MemberDao
 		}
 		catch(Exception e)
 		{
-			logger.debug("Payment  " + e);
+			logger.debug("Payment by username " + e);
 		}
 		finally
 		{
@@ -120,6 +146,8 @@ public class MemberDao
 				System.out.println(member.getEndAccounts());
 				member.setU_static(rs.getString("u_static"));
 				System.out.println(member.getU_static());
+				member.setPayment(rs.getString("payment"));
+				System.out.println(member.getPayment());
 				memberList.add(member);
 			}
 		}
