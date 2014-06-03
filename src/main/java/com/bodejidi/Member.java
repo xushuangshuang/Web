@@ -18,7 +18,24 @@ public class Member
 	private String u_static;
 	private String registerDate;
 	private String remark;
+	private String accountsed;
+	private String payment;
 
+	public void setAccountsed(String accountsed)
+	{
+		this.accountsed = accountsed;
+	}
+	public String getAccountsed()
+	{
+		return accountsed;
+	}public void setPayment(String payment)
+	{
+		this.payment = payment;
+	}
+	public String getPayment()
+	{
+		return payment;
+	}
 	public void setRemark(String remark)
 	{
 		this.remark = remark;
