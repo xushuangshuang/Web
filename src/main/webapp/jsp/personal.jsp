@@ -21,10 +21,6 @@
 				<td><p><%=member.getUsername()%></p></td>
 			</tr>
 			<tr>
-				<td><label>密码</label></td>
-				<td><input type="password" name="password" value="<%=member.getPassword()%>"/></td>
-			</tr>
-			<tr>
 				<td><label>Email</label></td>
 				<td><input type="text" name="Email" value="<%=member.getEmail()%>"/></td>
 			</tr>
@@ -53,6 +49,7 @@
 				<td><p><%=member.getRegisterDate()%></p></td>
 			</tr>
 			<tr>
+				<td><input type="hidden" name="username" value="<%=member.getUsername()%>">
 				<td><input type="submit" name="action" value="确认修改"/></td>
 			</tr>
 			</form>
