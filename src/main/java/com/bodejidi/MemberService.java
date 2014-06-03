@@ -7,7 +7,7 @@ public class MemberService
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	public void payment(Member member)
 	{
-		String tb_use_payment = "INSERT INTO tb_user_payment (username, payment, VIP, paymentDate) VALUE(?, ?, ?, ?) ";
+		String tb_use_payment = "UPDATE tb_user_payment SET payment = ?, VIP = ?, paymentDate = ? WHERE username = ?";
 		MemberDao dao = new MemberDao();
 		dao.paymentSave(member, tb_use_payment);	
 	}
