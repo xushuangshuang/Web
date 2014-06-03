@@ -20,14 +20,24 @@ public class Manage extends HttpServlet
 		req.getSession().setAttribute("member", memberList);
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
+		String number = member.getNumber();
 		if(action != null)
 		{
 			MemberService ms = new MemberService();
 			Member parm_member = ms.informationByUsername(action);
 			req.getSession().setAttribute("informationList", parm_member);
-			getServletContext()
-				.getRequestDispatcher("/admin/adminManage.jsp")
-				.forward(req, resp);
+			if(number != null)
+			{
+				getServletContext()
+					.getRequestDispatcher("/admin/accounts.jsp")
+					.forward(req, resp);
+			}
+			else
+			{
+				getServletContext()
+					.getRequestDispatcher("/admin/adminManage.jsp")
+					.forward(req, resp);
+			}
 		}
 		else
 		{
@@ -42,4 +52,5 @@ public class Manage extends HttpServlet
 	{
 
 	}
+	
 }
