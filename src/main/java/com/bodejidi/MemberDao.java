@@ -205,6 +205,7 @@ public class MemberDao
 			Long phone = Long.valueOf(member.getPhone());	
 				bs.prepare(tb_user_payment)
 					.setString(username)
+					.setString("N")
 					.execute();
 				System.out.println("SQL: " +tb_user_payment);
 				bs.prepare(username_sql)
@@ -224,7 +225,7 @@ public class MemberDao
 				System.out.println("SQL: " + Information_sql);
 				bs.prepare(tb_user_accounts)
 					.setString(username)
-					.setSting("0")
+					.setString("0")
 					.execute();
 				System.out.println("SQL: " + tb_user_accounts);
 		}
