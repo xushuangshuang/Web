@@ -19,10 +19,10 @@ public class MemberDao
 			String VIP = "Y";
 
 				bs.prepare(sql)
-					.setString(username)
 					.setString(payment)
 					.setString(VIP)
 					.setDate()
+					.setString(username)
 					.execute();
 				System.out.println("SQL: " + sql);
 		}
