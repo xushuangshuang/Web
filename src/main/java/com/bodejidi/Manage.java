@@ -53,6 +53,7 @@ public class Manage extends HttpServlet
 	{
 		Member member = Constants.doParma(req);
 		MemberService ms = new MemberService();
+		ms.usernameAccount(member);	
 		ms.payment(member);
 		resp.sendRedirect("/practice/manage");	
 	}
