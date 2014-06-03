@@ -49,13 +49,25 @@ public class Manage extends HttpServlet
 		}
 	}
 
-	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException ,ServletException
 	{
 		Member member = Constants.doParma(req);
-		MemberService ms = new MemberService();
-		ms.usernameAccount(member);	
-		ms.payment(member);
-		resp.sendRedirect("/practice/manage");	
+		String payment = member.getPayment(); 
+		if(null == payment)
+		{
+			System.out.println(" Manage " + payment);
+			getServletContext()
+				.getRequestDispatcher("/error/operator.jsp")
+				.forward(req, resp);	
+		}
+		else
+		{
+			System.out.println(" Manage  else" + payment);
+			MemberService ms = new MemberService();
+			ms.usernameAccount(member);	
+			ms.payment(member);
+			resp.sendRedirect("/practice/manage");
+		}
 	}
 	
 }
