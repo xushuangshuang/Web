@@ -20,6 +20,7 @@ public class Manage extends HttpServlet
 		req.getSession().setAttribute("member", memberList);
 		Member member = Constants.doParma(req);
 		String action = member.getAction();
+		System.out.println(action);
 		String number = member.getNumber();
 		if(action != null)
 		{
@@ -48,9 +49,12 @@ public class Manage extends HttpServlet
 		}
 	}
 
-	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
-
+		Member member = Constants.doParma(req);
+		MemberService ms = new MemberService();
+		ms.payment(member);
+		resp.sendRedirect("/practice/manage");	
 	}
 	
 }
