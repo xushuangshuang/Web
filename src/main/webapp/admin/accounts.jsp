@@ -40,9 +40,12 @@
 				<td><p><%=member.getPaymentDate()%></p></td>
 			</tr>
 			<form align=center action="manage" method="POST">
+				<tr>
+					<td><input type="hidden" name="username" value="<%=member.getUsername()%>"></td>
+				</tr>
 				<tr>			
 					<td><label>缴纳金额</label></td>
-					
+						
 					<td><input type="text" name="payment"/></td>
 				</tr>
 					<td><input type="submit" name="action" value="缴费"/></td>
