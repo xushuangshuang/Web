@@ -9,6 +9,29 @@ public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	
+	public void ParAlter(Member member, String sql)
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+		String Email = member.getEmail();
+		String username = member.getUsername();
+		System.out.println("  alter  " + username);
+		try
+		{
+	 		bs.prepare(sql)
+				.setString(Email)
+				.setString(username)
+				.execute();
+			System.out.println("SQL: " + sql);
+		}
+		catch(Exception e)
+		{
+			logger.debug(" alter " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+	}
 	public void alter(Member member, String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
@@ -16,12 +39,23 @@ public class MemberDao
 		String phone = member.getPhone();
 		String username = member.getUsername();
 		System.out.println("  alter  " + username);
-	 	bs.prepare(sql)
-			.setString(address)
-			.setLong(phone)
-			.setString(username)
-			.execute();
-		System.out.println("SQL: " + sql);
+		try
+		{
+	 		bs.prepare(sql)
+				.setString(address)
+				.setLong(phone)
+				.setString(username)
+				.execute();
+			System.out.println("SQL: " + sql);
+		}
+		catch(Exception e)
+		{
+			logger.debug(" alter " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
 	}
 	public String endAccountsPut(Member member, String sql)
 	{
