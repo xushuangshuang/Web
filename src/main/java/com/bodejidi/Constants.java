@@ -17,6 +17,8 @@ public class Constants extends HttpServlet
 	public static Member doParma(HttpServletRequest req)
 	{
 		Member member = new Member();
+		String number = req.getParameter("number");	
+		member.setNumber(number); 
 		String username = req.getParameter("username");	
 		member.setUsername(username); 
 		String firstName = req.getParameter("firstName");
