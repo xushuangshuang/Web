@@ -6,10 +6,17 @@ public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 
+	public void parAlter(Member member)
+	{
+		String par_alter_sql = "UPDATE tb_username SET userEmail = ? WHERE username = ?";
+		MemberDao md = new MemberDao();
+		md.ParAlter(member, par_alter_sql);
+	}
 	public void alter(Member member)
 	{
 		String alter_sql = "UPDATE tb_personalInformation SET address = ?, phone = ? WHERE username = ?";
 		MemberDao md = new MemberDao();
+		parAlter(member);
 		md.alter(member, alter_sql);
 	
 	}
