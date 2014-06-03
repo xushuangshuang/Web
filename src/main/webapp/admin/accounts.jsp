@@ -39,7 +39,7 @@
 				<td><label>上次缴费时间</label></td>
 				<td><p><%=member.getPaymentDate()%></p></td>
 			</tr>
-			<form align=center action="Manage" method="POST">
+			<form align=center action="manage" method="POST">
 				<tr>			
 					<td><label>缴纳金额</label></td>
 					
