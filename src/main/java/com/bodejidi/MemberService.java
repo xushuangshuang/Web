@@ -5,6 +5,7 @@ import java.util.List;
 public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+
 	public void usernameAccount(Member member)
 	{
 		String par = putEndAccounts(member);
