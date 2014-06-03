@@ -1,11 +1,14 @@
 <html>
 	<head>
 		<title>operate</title>
-		<meta http-equiv="refresh" content="5; URL=/practice/manage">
+		
 	</head>
 	<body>
 		</br>
 		</br>
+		<table align=center>
+			<th><a onclick="javascript:history.back(-1);" >返回</a></th>
+		</table>
 		</br>
 		</br>
 		<p align=center><font size="20" face="times" color="blue"> 警  告</font></p>
