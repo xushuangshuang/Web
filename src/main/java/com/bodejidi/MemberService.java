@@ -16,8 +16,16 @@ public class MemberService
 		Member member_Information = parInformationByUsername(member, username);
 		Member member_Accounts = parUsernameAccounts(member_Information, username);
 		Member register_username = parRegisterUsername(member_Accounts, username);
-		return 	register_username;
+		Member user_payment = payment(register_username, username);
+		return 	user_payment;
 		
+	}
+	public Member payment(Member member, String username)
+	{
+		String username_by_payment = "SELECT * FROM tb_user_payment WHERE username = ?";
+		MemberDao memberDao = new MemberDao();
+		Member parm = memberDao.paymentByUsername(member, username, username_by_payment);
+		return parm;
 	}
 	public Member parRegisterUsername(Member member, String username)
 	{
