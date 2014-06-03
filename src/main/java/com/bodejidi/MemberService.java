@@ -6,6 +6,13 @@ public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 
+	public void alter(Member member)
+	{
+		String alter_sql = "UPDATE tb_personalInformation SET address = ?, phone = ? WHERE username = ?";
+		MemberDao md = new MemberDao();
+		md.alter(member, alter_sql);
+	
+	}
 	public void usernameAccount(Member member)
 	{
 		String par = putEndAccounts(member);
