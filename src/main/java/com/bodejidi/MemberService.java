@@ -5,6 +5,12 @@ import java.util.List;
 public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	public void usernameAccount(Member member)
+	{
+		String tb_use_account = "UPDATE tb_username_account SET endAccounts = ? WHERE username = ?";
+		MemberDao dao = new MemberDao();
+		dao.endAccountsUpdate(member, tb_use_account);
+	}
 	public void payment(Member member)
 	{
 		String tb_use_payment = "UPDATE tb_user_payment SET payment = ?, VIP = ?, paymentDate = ? WHERE username = ?";
