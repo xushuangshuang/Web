@@ -29,7 +29,7 @@
 			</tr>
 			<tr>	
 				<td><label>VIP</label></td>
-				<td><p><%=member.get()%></p></td>
+				<td><p><%=member.getVIP()%></p></td>
 			</tr>
 			<tr>
 				<td><label>状态</label></td>
