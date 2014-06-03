@@ -30,7 +30,7 @@
 					<a href="?action=${member.username}">${member.username}</a>
 				</td>
 				<td>
-					<a href="?action=${member.endAccounts}">${member.endAccounts}</td></a>
+					<a href="?action=${member.username}&number=${member.endAccounts}">${member.endAccounts}</td></a>
 				<td>${member.u_static}</td>
       		   	</tr>
       			</c:forEach>
