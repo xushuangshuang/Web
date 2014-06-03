@@ -8,6 +8,21 @@ import java.util.ArrayList;
 public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+	
+	public void alter(Member member, String sql)
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+		String address = member.getAddress();
+		String phone = member.getPhone();
+		String username = member.getUsername();
+		System.out.println("  alter  " + username);
+	 	bs.prepare(sql)
+			.setString(address)
+			.setLong(phone)
+			.setString(username)
+			.execute();
+		System.out.println("SQL: " + sql);
+	}
 	public String endAccountsPut(Member member, String sql)
 	{
 		String par = null ;
