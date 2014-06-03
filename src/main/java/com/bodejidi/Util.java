@@ -12,5 +12,16 @@ public class Util
    		}
    		return true;
 	}
-
+	public static long number(String str)
+	{
+		if(isNumeric(str))
+		{
+			long par = Long.valueOf(str);
+			return par;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 }
