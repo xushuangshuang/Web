@@ -5,7 +5,18 @@ import java.util.List;
 public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
-
+	public boolean alterPassword(Member member)
+	{
+		String username = member.getUsername();
+		Member parMember =  parInformationByUsername(member, username);
+		Member par = parRegisterUsername(parMember, username);
+		boolean pa = Util.isEquals(username, par.getUsername());
+		boolean parm = Util.isEquals(member.getPassword(), par.getPassword());
+		boolean parmA = Util.isEquals(member.getEmail(), par.getEmail());
+	       	boolean	parmB = Util.isEquals(member.getFirstName(), par.getFirstName()+par.getLastName());
+		boolean isAlter = Util.isTrue(pa, parm, parmA, parmB);
+		return isAlter;
+	}
 	public void parAlter(Member member)
 	{
 		String par_alter_sql = "UPDATE tb_username SET userEmail = ? WHERE username = ?";
