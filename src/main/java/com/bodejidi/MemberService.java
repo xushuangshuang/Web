@@ -8,13 +8,22 @@ public class MemberService
 	public boolean alterPassword(Member member)
 	{
 		String username = member.getUsername();
-		Member parMember =  parInformationByUsername(member, username);
+		System.out.println("  "  + username);
+		Member parmember = new Member();
+		Member parMember =  parInformationByUsername(parmember, username);
 		Member par = parRegisterUsername(parMember, username);
 		boolean pa = Util.isEquals(username, par.getUsername());
+		System.out.println("boolean pa "  +  username + "  " + par.getUsername());
 		boolean parm = Util.isEquals(member.getPassword(), par.getPassword());
+		System.out.println("boolean pa "  +  member.getPassword() + "  " + par.getPassword() );
 		boolean parmA = Util.isEquals(member.getEmail(), par.getEmail());
+		System.out.println("boolean pa "  +  member.getEmail() + " " + par.getEmail());
 	       	boolean	parmB = Util.isEquals(member.getFirstName(), par.getFirstName()+par.getLastName());
+		System.out.println("boolean pa "  +  parmB);
+		System.out.println("boolean pa "  +  member.getFirstName());
+		System.out.println("boolean pa "  +  par.getFirstName()+par.getLastName());
 		boolean isAlter = Util.isTrue(pa, parm, parmA, parmB);
+		System.out.println("boolean pa "  +  isAlter);
 		return isAlter;
 	}
 	public void parAlter(Member member)
