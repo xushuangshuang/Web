@@ -2,6 +2,38 @@ package com.bodejidi;
 
 public class Util
 {
+	public static boolean isEquals(String str, String par)
+	{
+		if(str == null || par == null)
+		{
+			return false;
+		}
+		else
+		{
+			if(str.equals(par))
+			{
+      				return true;
+   			}
+			else
+			{
+   				return false;
+			}
+		}
+   		
+	}
+
+	public static boolean isTrue(boolean... pa)
+	{
+		for(boolean i : pa)
+		{
+			if(i == false)
+			{
+				break;
+			}
+		}
+
+		return false;
+	}
 	public static boolean isNumeric(String str)
 	{
    		for(int i=str.length();--i>=0;)
