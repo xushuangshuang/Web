@@ -33,11 +33,11 @@
 			</tr>
 			<tr>
 				<td><label>旧密码</label></td>
-				<td><input type="text" name="password"/></td>
+				<td><input type="password" name="password"/></td>
 			</tr>
 			<tr>
 				<td><label>新密码</label></td>
-				<td><input type="text" name="password"/></td>
+				<td><input type="password" name="rePassword"/></td>
 			</tr>
 			<tr>
 				<td><input type="submit" name="action" value="确认"/></td>
