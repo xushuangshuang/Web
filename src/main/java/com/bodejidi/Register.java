@@ -15,9 +15,19 @@ public class Register extends HttpServlet
 		String action = member.getAction();
 		if("admin".equals(action))
 		{
-			getServletContext()
-				.getRequestDispatcher("/servlet/adminRegister.jsp")
-				.forward(req, resp);	
+			String username = (String)req.getSession().getAttribute("adminUsername");
+			if("benben".equals(username))
+			{
+				getServletContext()
+					.getRequestDispatcher("/servlet/adminRegister.jsp")
+					.forward(req, resp);	
+			}
+			else
+			{
+				getServletContext()
+					.getRequestDispatcher("/error/competenceError.jsp")
+					.forward(req, resp);
+			}
 		}
 		else
 		{
