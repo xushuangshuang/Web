@@ -43,12 +43,13 @@ public class Personal extends HttpServlet
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		Member member = Constants.doParma(req);
-		System.out.println(member.getFirstName());
+		System.out.println(member.getNewPassword() + " newPassword  " );
 		String action = member.getAction();
+		MemberService ms = new MemberService();
 		
 		if("确认修改".equals(action))
 		{
-			MemberService ms = new MemberService();
+		
 			ms.alter(member);
 			getServletContext()
 				.getRequestDispatcher("/jsp/alter.jsp")
@@ -57,12 +58,11 @@ public class Personal extends HttpServlet
 		}
 		else if("确认".equals(action))
 		{	
-			MemberService ms = new MemberService();	
 			boolean alter = ms.alterPassword(member);
 			System.out.println(alter);
 			if(alter)
 			{
-				:
+				ms.parPersonal(member);
 				getServletContext()
 					.getRequestDispatcher("/jsp/alter.jsp")
 					.forward(req, resp);
