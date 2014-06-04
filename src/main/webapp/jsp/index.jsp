@@ -30,6 +30,7 @@
 		<tr>
 			<th><input type="submit" name="action" value="登录"/></th>
 			<th>&nbsp;</th>
+			<th><a href="personal?action=password">忘记密码</a></th>
 		</form>
 			<th><a href="/practice/register">注册</a></th>
 		</tr>
