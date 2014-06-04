@@ -34,11 +34,15 @@ public class Personal extends HttpServlet
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		Member member = Constants.doParma(req);
-		String action = member.getAction("action");
+		String action = member.getAction();
 		if("确认修改".equals(action))
 		{
 			MemberService ms = new MemberService();
-			ms.alter(member);	
+			ms.alter(member);
+			getServletContext()
+				.getRequestDispatcher("/jsp/alter.jsp")
+				.forward(req, resp);
+				
 		}
 	}
 }	
