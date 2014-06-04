@@ -18,7 +18,7 @@
 			<th><a onclick="javascript:history.back(-1);" >返回</a></th>
 			<th></br></th>
 			<th></br></th>
-			<th><a href="?action=password">修改密码</a></th>
+			<th><a href="/practice/jsp/alterPassword.jsp">修改密码</a></th>
 			</tr>
 		</table>
 		</br>
