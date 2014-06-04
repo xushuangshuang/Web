@@ -21,23 +21,23 @@
 		<form align=center action="personal" method="POST">
 			<tr>
 				<td><label>用户名</label></td>
-				<td><input type="text" name="username" value="用户名"/></td>
+				<td><input type="text" name="username"/></td>
 			</tr>
 			<tr>
 				<td><label>Email</label></td>
-				<td><input type="text" name="Email" value="注册邮箱"/></td>
+				<td><input type="text" name="Email"/></td>
 			</tr>
 			<tr>
 				<td><label>真实姓名</label></td>
-				<td><input type="text" name="firstName" value="真实姓名"/></td>
+				<td><input type="text" name="firstName"/></td>
 			</tr>
 			<tr>
 				<td><label>旧密码</label></td>
-				<td><input type="text" name="password" value="旧密码"/></td>
+				<td><input type="text" name="password"/></td>
 			</tr>
 			<tr>
 				<td><label>新密码</label></td>
-				<td><input type="text" name="password" value="新密码"/></td>
+				<td><input type="text" name="password"/></td>
 			</tr>
 			<tr>
 				<td><input type="submit" name="action" value="确认"/></td>
