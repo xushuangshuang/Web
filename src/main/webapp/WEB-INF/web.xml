@@ -86,5 +86,13 @@
   	<servlet-mapping>
 	  	<servlet-name>personal</servlet-name>
 	  	<url-pattern>/personal</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  	<servlet-name>cancellation</servlet-name>
+	  	<servlet-class>com.bodejidi.Cancellation</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+	  	<servlet-name>cancellation</servlet-name>
+	  	<url-pattern>/cancellation</url-pattern>
   	</servlet-mapping>
 </web-app>
