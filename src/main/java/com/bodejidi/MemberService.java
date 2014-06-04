@@ -5,6 +5,13 @@ import java.util.List;
 public class MemberService
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
+
+	public void parPersonal(Member member)
+	{
+		String par_alter_sql = "UPDATE tb_personalInformation SET password = ? WHERE username = ?";
+		MemberDao md = new MemberDao();
+		md.parPersonal(member, par_alter_sql);
+	}
 	public boolean alterPassword(Member member)
 	{
 		String username = member.getUsername();
