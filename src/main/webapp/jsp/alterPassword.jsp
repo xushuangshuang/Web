@@ -37,7 +37,7 @@
 			</tr>
 			<tr>
 				<td><label>新密码</label></td>
-				<td><input type="password" name="rePassword"/></td>
+				<td><input type="password" name="newPassword"/></td>
 			</tr>
 			<tr>
 				<td><input type="submit" name="action" value="确认"/></td>
