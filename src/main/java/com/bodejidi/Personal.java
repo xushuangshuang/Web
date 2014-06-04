@@ -13,6 +13,9 @@ public class Personal extends HttpServlet
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		String username = (String)req.getSession().getAttribute("username");
+		Member member = Constants.doParma(req);
+		String action = member.getAction();
+		System.out.println(" personal " + action);
 		if(username != null)
 		{
 			MemberService ms = new MemberService();
@@ -20,6 +23,12 @@ public class Personal extends HttpServlet
 			req.getSession().setAttribute("personal", parMember);
 			getServletContext()
 				.getRequestDispatcher("/jsp/personal.jsp")
+				.forward(req, resp);
+		}
+		else if("password".equals(action))
+		{
+			getServletContext()
+				.getRequestDispatcher("/jsp/alterPassword.jsp")
 				.forward(req, resp);
 		}
 		else
@@ -43,6 +52,21 @@ public class Personal extends HttpServlet
 				.getRequestDispatcher("/jsp/alter.jsp")
 				.forward(req, resp);
 				
+		}
+		else if("确认".equals(action))
+		{	
+			MemberService ms = new MemberService();	
+			boolean alter = ms.alterPassword(member);
+			if(alter)
+			{
+				getServletContext()
+					.getRequestDispatcher("/jsp/alter.jsp")
+					.forward(req, resp);
+			}
+			else
+			{
+			resp.sendRedirect("/practice/practice");	
+			}
 		}
 	}
 }	
