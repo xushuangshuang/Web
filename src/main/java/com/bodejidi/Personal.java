@@ -65,7 +65,9 @@ public class Personal extends HttpServlet
 			}
 			else
 			{
-			resp.sendRedirect("/practice/practice");	
+				getServletContext()
+					.getRequestDispatcher("/jsp/failed.jsp")
+					.forward(req, resp);	
 			}
 		}
 	}
