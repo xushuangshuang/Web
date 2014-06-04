@@ -23,7 +23,16 @@ public class Member
 	private String VIP;
 	private String number;
 	private String paymentDate;
+	private String newPassword;
 	
+	public void setNewPassword(String newPassword)
+	{
+		this.newPassword = newPassword;
+	}
+	public String getNewPassword()
+	{
+		return newPassword;
+	}
 	public void setPaymentDate(String paymentDate)
 	{
 		this.paymentDate = paymentDate;
