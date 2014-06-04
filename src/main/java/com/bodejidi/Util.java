@@ -28,11 +28,11 @@ public class Util
 		{
 			if(i == false)
 			{
-				break;
+				return false;
 			}
 		}
 
-		return false;
+		return true;
 	}
 	public static boolean isNumeric(String str)
 	{
