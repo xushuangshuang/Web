@@ -18,7 +18,7 @@ public class Constants extends HttpServlet
 	{
 		Member member = new Member();
 		String newPassword = req.getParameter("newPassword");	
-		member.setPayment(newPassword); 
+		member.setNewPassword(newPassword); 
 		String payment = req.getParameter("payment");	
 		member.setPayment(payment); 
 		String number = req.getParameter("number");	
