@@ -43,7 +43,7 @@ public class MemberDao
 		{
 	 		bs.prepare(sql)
 				.setString(address)
-				.setLong(phone)
+				.setLong(Long.valueOf(phone))
 				.setString(username)
 				.execute();
 			System.out.println("SQL: " + sql);
