@@ -9,6 +9,29 @@ public class MemberDao
 {
 	static final Logger logger = LoggerFactory.getLogger(MemberDao.class);
 	
+	public void parPersonal(Member member, String sql)
+	{
+		DatabaseService bs = DatabaseService.newInstance();
+		String rePassword = member.getNewPassword();
+		String username = member.getUsername();
+		System.out.println("  alter  " + username + "  "  +rePassword);
+		try
+		{
+	 		bs.prepare(sql)
+				.setString(rePassword)
+				.setString(username)
+				.execute();
+			System.out.println("SQL: " + sql);
+		}
+		catch(Exception e)
+		{
+			logger.debug(" alter " + e);
+		}
+		finally
+		{
+			bs.close();
+		}
+	}	
 	public void ParAlter(Member member, String sql)
 	{
 		DatabaseService bs = DatabaseService.newInstance();
